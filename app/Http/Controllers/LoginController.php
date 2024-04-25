@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -12,8 +13,12 @@ class LoginController extends Controller
     }
     public function login(LoginRequest $request)
     {
-        // $email = $request->input('email');
-        // $password = $request->input('password');
-        return view('index');
+        $credentials = $request->only('email', 'password');
+        if(Auth::attempt($credentials)){
+            return redirect()->route('dashboard.index');
+        }
+        else{
+            return redirect()->back()->with('error', 'Email ou Mot de passe invalide');
+        }
     }
 }

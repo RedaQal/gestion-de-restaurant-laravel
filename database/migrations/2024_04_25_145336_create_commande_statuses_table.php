@@ -12,31 +12,31 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('commande_statuses', function (Blueprint $table) {
-            $table->id('id_commande_statuse');
+            $table->id();
 
             $table->enum('status',['en cours','valide','payer'])->default('en cours');
-            
+
             $table->foreignId('id_commande')->constrained(
                 table :'commandes',
-                column :'id_commande',
+                column :'id',
                 indexName :'fk_commande_status_commande_id',
             )->onDelete('cascade');
 
             $table->foreignId('id_serveur')->nullable()->constrained(
                 table :'serveurs',
-                column :'id_serveur',
+                column :'id',
                 indexName :'fk_commande_status_id_serveur',
             )->onDelete('cascade');
 
             $table->foreignId('id_cuisinier')->nullable()->constrained(
                 table :'cuisiniers',
-                column :'id_cuisinier',
+                column :'id',
                 indexName :'fk_commande_status_id_cuisinier',
             )->onDelete('cascade');
 
             $table->foreignId('id_caissiere')->nullable()->constrained(
                 table :'caissieres',
-                column :'id_caissiere',
+                column :'id',
                 indexName :'fk_commande_status_id_caissiere',
             )->onDelete('cascade');
 

@@ -20,7 +20,7 @@ class EmployeSeeder extends Seeder
             [
                 'name' => 'admin',
                 'role' => 'admin',
-                'email' => 'admin@admin',
+                'email' => 'admin@gmail.com',
                 'password' => bcrypt('admin'),
                 'tel' => "0611111111",
                 'created_at' => now(),

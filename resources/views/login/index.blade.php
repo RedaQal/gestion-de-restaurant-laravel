@@ -53,6 +53,10 @@
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+                        @if (Session::has('error'))
+                            <small
+                                class="text-danger d-block mb-3 text-center">{{ Session::get('error') }}</small>
+                        @endif
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary px-3">Connecter</button>
                         </div>

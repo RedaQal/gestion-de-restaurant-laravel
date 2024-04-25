@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('produits', function (Blueprint $table) {
-            $table->id("id_produit");
+            $table->id();
             $table->string("label");
             $table->text("description");
             $table->decimal("prix");
             $table->foreignId("id_categorie")->constrained(
                 table :"categories",
-                column:"id_categorie",
+                column:"id",
                 indexName :'fk_produit_categorie'
             )->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
