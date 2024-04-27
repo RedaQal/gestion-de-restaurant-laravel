@@ -17,7 +17,7 @@ Route::post('/login', [LoginController::class, "login"])->name("login.login");
 Route::get('/logout', [LoginController::class, "logout"])->name("logout");
 
 //dashboard route
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, "index"])->name("dashboard.index");
     Route::get('/dashboard/employe', [EmployeController::class, "index"])->name("dashboard.employe.index");
     Route::get('/dashboard/employe/ajouter', [EmployeController::class, "create"])->name("dashboard.employe.create");

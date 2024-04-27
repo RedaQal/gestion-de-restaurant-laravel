@@ -27,5 +27,27 @@ class EmployeSeeder extends Seeder
                 'updated_at' => now(),
             ]
         );
+        DB::table(
+            'employes'
+        )->insert(
+            [
+                'name' => 'serveur',
+                'role' => 'agent',
+                'email' => 'serveur@gmail.com',
+                'password' => bcrypt('serveur'),
+                'tel' => "0622222222",
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+        DB::table(
+            'serveurs'
+        )->insert(
+            [
+                'id_employe' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
     }
 }
