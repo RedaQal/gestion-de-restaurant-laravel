@@ -150,6 +150,7 @@ img {
 
 .l-header {
     width: 100%;
+    padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -166,10 +167,16 @@ img {
     align-items: center;
 }
 
+.img__brand {
+    width: 150px;
+    padding: 5px;
+}
+
 @media screen and (max-width: 768px) {
     .nav__menu {
         position: fixed;
         top: -100%;
+        margin-top: 15px;
         left: 0;
         width: 100%;
         padding: 1.5rem 0 1rem;
@@ -180,6 +187,8 @@ img {
         border-radius: 0 0 1rem 1rem;
         z-index: var(--z-fixed);
     }
+
+
 }
 
 .nav__item {
@@ -467,6 +476,7 @@ img {
 
 /*========== MEDIA QUERIES ==========*/
 @media screen and (min-width: 576px) {
+
     .home__container,
     .about__container,
     .app__container {
@@ -493,6 +503,7 @@ img {
         grid-template-columns: 1.75fr 1fr;
         align-items: center;
     }
+
     .contact__button {
         justify-self: center;
     }
@@ -510,13 +521,16 @@ img {
     .nav {
         height: calc(var(--header-height) + 1.5rem);
     }
+
     .nav__list {
         display: flex;
     }
+
     .nav__item {
         margin-left: var(--mb-5);
         margin-bottom: 0;
     }
+
     .nav__toggle {
         display: none;
     }
@@ -540,9 +554,11 @@ img {
         grid-template-columns: repeat(3, 210px);
         column-gap: 4rem;
     }
+
     .menu__content {
         padding: 1.5rem;
     }
+
     .menu__img {
         width: 130px;
     }

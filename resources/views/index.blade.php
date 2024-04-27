@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="icon" href="{{ asset('images/icon.png') }}">
+    <link rel="icon" href="{{ asset('images/Gustaria.png') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <title>Aji takol</title>
+    <title>Gustaria</title>
 </head>
 
 <body>
@@ -22,11 +21,9 @@
         <x-contact />
     </div>
     <x-footer />
-
-
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-    /*==================== SHOW MENU ====================*/
+        /*==================== SHOW MENU ====================*/
         const showMenu = (toggleId, navId) => {
             const toggle = document.getElementById(toggleId),
                 nav = document.getElementById(navId)
@@ -122,7 +119,7 @@
         /*==================== SCROLL REVEAL ANIMATION ====================*/
         const sr = ScrollReveal({
             origin: 'top',
-            distance: '20px',
+            distance: '30px',
             duration: 1000,
             reset: true,
         });
@@ -135,7 +132,7 @@
             .footer__content`, {
             interval: 200
         })
-        </script>
+    </script>
 
 </body>
 
