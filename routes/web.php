@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
@@ -11,8 +12,9 @@ Route::get('/', [HomeController::class, "index"])->name("index.index");
 
 //login route
 
-Route::get('/login', [LoginController::class, "index"])->name("login.index");
+Route::get('/login', [LoginController::class, "index"])->name("login");
 Route::post('/login', [LoginController::class, "login"])->name("login.login");
+Route::get('/logout', [LoginController::class, "logout"])->name("logout");
 
 //dashboard route
 Route::middleware('auth')->group(function () {
@@ -23,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/menu', [MenuController::class, "index"])->name("dashboard.menu.index");
 });
 
-//Serveur dashboard
+//Serveur Interface
+
 Route::get('/serveur', [DashboardController::class, "serveur"])->name("serveur.index");
 

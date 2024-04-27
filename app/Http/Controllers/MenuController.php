@@ -11,6 +11,7 @@ class MenuController extends Controller
 
         return view('dashboard.Admin.menu.index');
     }
+
     public function create()
     {
         return view('dashboard.Admin.menu.create');

@@ -110,21 +110,21 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>Logout</span>
+                <a href="{{ route('logout') }}" class="sidebar-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Decconnexion</span>
                 </a>
             </div>
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3 bg-secondary ">
                 <div class="navbar-collapse collapse">
-                    <h4 style="color: white">{{ $title }}</h4>
+                    <h4 class="text-white">{{ $title }}</h4>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
-                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="{{ asset('images/Gustaria.png') }}" class="avatar img-fluid"
-                                    alt="">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0 text-white me-5">
+                                <i class="fa-solid fa-user me-2"></i>
+                               {{ Str::upper(Auth::user()->name) }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end rounded">
                                 <a href="#" class="dropdown-item">
@@ -135,8 +135,8 @@
                                     <i class="lni lni-cog me-2"></i>
                                     <span class="text">Setting</span>
                                 </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="lni lni-exit me-2"></i>
+                                <a href="{{ route('logout') }}" class="dropdown-item">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
                                     <span class="text">Logout</span>
                                 </a>
                             </div>

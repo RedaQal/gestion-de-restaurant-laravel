@@ -10,6 +10,7 @@ class EmployeController extends Controller
     {
         return view('dashboard.Admin.employe.index');
     }
+    
     public function create()
     {
         return view('dashboard.Admin.employe.create');
