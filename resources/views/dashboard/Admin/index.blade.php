@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.admin-dashbord title="Dashboard">
+<x-dashbordComponents.Admin.master title="Dashboard">
     <h1>Acceuil</h1>
     <div class="container">
         <div>
@@ -32,4 +32,4 @@
             });
         </script>
     </div>
-</x-dashbordComponents.Admin.admin-dashbord>
+</x-dashbordComponents.Admin.master>

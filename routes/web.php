@@ -17,12 +17,13 @@ Route::post('/login', [LoginController::class, "login"])->name("login.login");
 Route::get('/logout', [LoginController::class, "logout"])->name("logout");
 
 //dashboard route
-Route::middleware(['auth','admin'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, "index"])->name("dashboard.index");
-    Route::get('/dashboard/employe', [EmployeController::class, "index"])->name("dashboard.employe.index");
-    Route::get('/dashboard/employe/ajouter', [EmployeController::class, "create"])->name("dashboard.employe.create");
-    Route::get('/dashboard/menu/ajouter', [MenuController::class, "create"])->name("dashboard.menu.create");
-    Route::get('/dashboard/menu', [MenuController::class, "index"])->name("dashboard.menu.index");
+Route::middleware(['auth','admin'])->prefix("dashboard")->name("dashboard.")->group(function () {
+    Route::get('/', [DashboardController::class, "index"])->name("index");
+    Route::get('/employe', [EmployeController::class, "index"])->name("employe.index");
+    Route::get('/employe/create', [EmployeController::class, "create"])->name("employe.create");
+    Route::post('/employe', [EmployeController::class, "store"])->name("employe.store");
+    Route::get('/menu/create', [MenuController::class, "create"])->name("menu.create");
+    Route::get('/menu', [MenuController::class, "index"])->name("menu.index");
 });
 
 //Serveur Interface

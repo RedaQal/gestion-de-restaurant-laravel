@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.admin-dashbord title="Ajouter Plat :">
+<x-dashbordComponents.Admin.master title="Ajouter Plat">
     <div class="container mt-3 w-50">
         <form action="">
             @csrf
@@ -24,4 +24,4 @@
             <button class="btn btn-info">Ajouter</button>
         </form>
     </div>
-</x-dashbordComponents.Admin.admin-dashbord>
+</x-dashbordComponents.Admin.master>

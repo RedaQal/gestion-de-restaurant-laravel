@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>{{ $title }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
     <link rel="stylesheet" href="{{ asset('css/StyleDashboard.css') }}">
 </head>
-
 <body>
     <div class="wrapper">
         <aside id="sidebar">
@@ -119,12 +117,12 @@
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3 bg-secondary ">
                 <div class="navbar-collapse collapse">
-                    <h4 class="text-white">{{ $title }}</h4>
+                    <h4 class="text-white">{{ $title }} :</h4>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0 text-white me-5">
                                 <i class="fa-solid fa-user me-2"></i>
-                               {{ Str::upper(Auth::user()->name) }}
+                                {{ Str::upper(Auth::user()->name) }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end rounded">
                                 <a href="#" class="dropdown-item">
@@ -154,10 +152,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <script src="script.js"></script>
     <script>
         const hamBurger = document.querySelector(".toggle-btn");
-
         hamBurger.addEventListener("click", function() {
             document.querySelector("#sidebar").classList.toggle("expand");
         });

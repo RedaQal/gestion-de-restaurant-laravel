@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.admin-dashbord title="Liste des plats :">
+<x-dashbordComponents.Admin.master title="Liste des plats">
 
     <table class="table">
         <thead>
@@ -24,4 +24,4 @@
         </tbody>
     </table>
 
-</x-dashbordComponents.Admin.admin-dashbord>
+</x-dashbordComponents.Admin.master>
