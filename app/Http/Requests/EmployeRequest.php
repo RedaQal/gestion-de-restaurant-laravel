@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EmployeRequest extends FormRequest
@@ -22,11 +23,12 @@ class EmployeRequest extends FormRequest
      */
     public function rules(): array
     {
+        $employe = $this->employe->id ?? 0;
         return [
-            'name'=>'required',
-            'email'=>'required|email|unique:employes,email',
-            'tel'=>'required',
-            'salaire'=>'required|numeric',
+            'name' => 'required',
+            'email' => "required|email|unique:employes,email,$employe",
+            'tel' => 'required',
+            'salaire' => 'required|numeric',
         ];
     }
 }

@@ -17,6 +17,7 @@ class EmployeController extends Controller
         $employes = Employe::paginate(8);
         return view('dashboard.Admin.employe.index', compact('employes'));
     }
+
     public function create()
     {
         return view('dashboard.Admin.employe.create');
@@ -49,10 +50,24 @@ class EmployeController extends Controller
                     break;
             }
         }
-        $message = 'Employe ' . $request->name . ' ajoute avec succes <br> Email : ' . $request->email . '<br> Mot de passe : ' . '<strong>' . $password . '</strong>';
+        $message = 'Employe <strong>'  . $request->name .'</strong> ajoute avec succes <br> Email : <strong>' . $request->email .'</strong> <br> Mot de passe : ' . '<strong>' . $password . '</strong>';
         return to_route('dashboard.employe.create')->with('success', $message);
     }
 
+    public function edit(Employe $employe)
+    {
+        return view('dashboard.Admin.employe.edit', compact('employe'));
+    }
+
+    public function update(EmployeRequest $request, Employe $employe)
+    {
+        $fieldForm = $request->only("name","email", "tel", "salaire");
+        $employe->update($fieldForm);
+        $message = 'Employe ' .'<strong>'. $request->name .'</strong>'. ' modifier avec succes <br>';
+        return to_route('dashboard.employe.index')->with('success',$message);
+    }
+
+    //generating password for Employees
     private function generateRandomPassword($length = 16)
     {
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#%*';
