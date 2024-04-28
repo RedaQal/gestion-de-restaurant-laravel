@@ -30,7 +30,8 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
     //update employee
     Route::get('/employe/{employe}/edit', [EmployeController::class, "edit"])->name('employe.edit');
     Route::put('/employe/{employe}', [EmployeController::class, "update"])->name("employe.update");
-
+    //delete employee
+    Route::delete('/employe/{employe}', [EmployeController::class, "destroy"])->name("employe.destroy");
     Route::get('/menu/create', [MenuController::class, "create"])->name("menu.create");
     Route::get('/menu', [MenuController::class, "index"])->name("menu.index");
 });

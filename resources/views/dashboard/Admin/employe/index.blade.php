@@ -27,9 +27,37 @@
                         <td>
                             <a href="{{ route('dashboard.employe.edit', $employe->id) }}" type="button"
                                 class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#modal{{ $employe->id }}">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
+                    <div class="modal fade" id="modal{{ $employe->id }}" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    vous etes sur de vouloir supprimer <strong>{{ $employe->name }} </strong>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <form action="{{ route('dashboard.employe.destroy', $employe->id) }}"
+                                        method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             </tbody>
         </table>

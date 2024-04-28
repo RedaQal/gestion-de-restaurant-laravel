@@ -66,6 +66,11 @@ class EmployeController extends Controller
         $message = 'Employe ' .'<strong>'. $request->name .'</strong>'. ' modifier avec succes <br>';
         return to_route('dashboard.employe.index')->with('success',$message);
     }
+    public function destroy(Employe $employe)
+    {
+        $employe->delete();
+        return to_route('dashboard.employe.index')->with('success', 'Employe supprime avec succes');
+    }
 
     //generating password for Employees
     private function generateRandomPassword($length = 16)
