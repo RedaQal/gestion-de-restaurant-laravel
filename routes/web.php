@@ -11,13 +11,17 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [HomeController::class, "index"])->name("index.index");
 
 //login route
+Route::middleware(['guest'])->prefix("login")->name("login")->group(function () {
+    Route::get('/', [LoginController::class, "index"])->name("");
+    Route::post('/', [LoginController::class, "login"])->name(".login");
+});
 
-Route::get('/login', [LoginController::class, "index"])->name("login");
-Route::post('/login', [LoginController::class, "login"])->name("login.login");
-Route::get('/logout', [LoginController::class, "logout"])->name("logout");
+//logout
+
+Route::get('logout', [LoginController::class, "logout"])->name("login.logout");
 
 //dashboard route
-Route::middleware(['auth','admin'])->prefix("dashboard")->name("dashboard.")->group(function () {
+Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->group(function () {
     Route::get('/', [DashboardController::class, "index"])->name("index");
     Route::get('/employe', [EmployeController::class, "index"])->name("employe.index");
     Route::get('/employe/create', [EmployeController::class, "create"])->name("employe.create");
@@ -29,4 +33,3 @@ Route::middleware(['auth','admin'])->prefix("dashboard")->name("dashboard.")->gr
 //Serveur Interface
 
 Route::get('/serveur', [DashboardController::class, "serveur"])->name("serveur.index");
-

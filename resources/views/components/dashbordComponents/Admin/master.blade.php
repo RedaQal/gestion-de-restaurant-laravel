@@ -108,7 +108,7 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="{{ route('logout') }}" class="sidebar-link">
+                <a href="{{ route('login.logout') }}" class="sidebar-link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Decconnexion</span>
                 </a>
@@ -133,7 +133,7 @@
                                     <i class="lni lni-cog me-2"></i>
                                     <span class="text">Setting</span>
                                 </a>
-                                <a href="{{ route('logout') }}" class="dropdown-item">
+                                <a href="{{ route('login.logout') }}" class="dropdown-item">
                                     <i class="fa-solid fa-right-from-bracket"></i>
                                     <span class="text">Logout</span>
                                 </a>
