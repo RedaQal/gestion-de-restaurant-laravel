@@ -22,6 +22,12 @@ class MenuController extends Controller
         return view('dashboard.Admin.menu.create', compact('categories'));
     }
 
+    public function update(Request $request, Produit $produit)
+    {
+        $produit->update(["prix" => $request->input('prix')]);
+        return to_route('dashboard.menu.index')->with('success', "Produit <strong> $produit->label</strong> est modifié avec succes");
+    }
+
     public function destroy(Produit $produit)
     {
         $this->deleteImg($produit->images);
@@ -38,6 +44,7 @@ class MenuController extends Controller
         $this->storeImg($request, $produit->id);
         return back()->with('success', "Produit <strong> $request->label</strong> ajouter avec succes");
     }
+
 
     public function storeImg(ProduitsRequest $request, int $id)
     {

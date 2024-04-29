@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,16 +36,16 @@
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#employe" aria-expanded="false" aria-controls="employe">
                         <i class="fa fa-users" aria-hidden="true"></i>
-                        <span>Employees</span>
+                        <span>Employé</span>
                     </a>
                     <ul id="employe" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a href="{{ route('dashboard.employe.index') }}" class="sidebar-link"><small
-                                    class="text-small">List employe</small></a>
+                                    class="text-small">List employes</small></a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('dashboard.employe.create') }}" class="sidebar-link"><small
-                                    class="text-small">Ajouter employe</small></a>
+                                    class="text-small">Ajouter employé</small></a>
                         </li>
                     </ul>
                 </li>

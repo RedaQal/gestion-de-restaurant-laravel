@@ -39,6 +39,8 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
     Route::post('/menu', [MenuController::class, "store"])->name("menu.store");
     //delete produit
     Route::delete('/menu/{produit}', [MenuController::class, "destroy"])->name("menu.destroy");
+    //update produit
+    Route::put('/menu/{produit}', [MenuController::class, "update"])->name("menu.update");
 
 });
 
