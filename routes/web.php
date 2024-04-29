@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
@@ -12,7 +11,7 @@ Route::get('/', [HomeController::class, "index"])->name("index.index");
 
 //login route
 Route::middleware(['guest'])->prefix("login")->name("login")->group(function () {
-    Route::get('/', [LoginController::class, "index"])->name("");
+    Route::get('/', [LoginController::class, "index"]);
     Route::post('/', [LoginController::class, "login"])->name(".login");
 });
 

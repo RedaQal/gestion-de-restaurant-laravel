@@ -3,29 +3,38 @@
         <table class="table table-hover table-bordered shadow text-center">
             <thead class="table-secondary">
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">label</th>
-                    <th scope="col">prix</th>
-                    <th scope="col">description</th>
-                    <th scope="col">categorie</th>
-                    <th scope="col">Action</th>
+                    <th>#Id</th>
+                    <th>Label</th>
+                    <th>Prix</th>
+                    <th>Categorie</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>tajin</td>
-                    <td>50dh</td>
-                    <td>tajin belbr9o9 w lmchmach dakchi bniin</td>
-                    <td>ghda</td>
-                    <td>
-                        <a href="" type="button" class="btn btn-success"><i
-                                class="fa-solid fa-pen-to-square"></i> </a>
-                        <a href="" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
+                @foreach ($produits as $produit)
+                    <tr>
+                        <td class='fw-bold'>{{ $produit->id }}</td>
+                        <td>{{ $produit->label }}</td>
+                        <td>{{ $produit->prix }} MAD</td>
+                        <td>{{ $produit->categorie->label }}</td>
+                        <td>
+                            <button title="Details" type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#produit{{ $produit->id }}">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                            <a href="" title="Modifier" type="button" class="btn btn-success btn-sm"><i
+                                    class="fa-solid fa-pen-to-square"></i> </a>
+                            <a href="" title="Supprimer" type="button" class="btn btn-danger btn-sm"><i
+                                    class="fa-solid fa-trash"></i></a>
+                        </td>
+                        <x-modal :produit="$produit" />
+                    </tr>
+                @endforeach
             </tbody>
         </table>
+        <div class="float-end">
+            {{ $produits->links('pagination::bootstrap-4') }}
+        </div>
     </div>
     <script>
         const close = document.getElementById('close');
