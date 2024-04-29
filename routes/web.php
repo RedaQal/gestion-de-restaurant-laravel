@@ -32,8 +32,12 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
     Route::put('/employe/{employe}', [EmployeController::class, "update"])->name("employe.update");
     //delete employee
     Route::delete('/employe/{employe}', [EmployeController::class, "destroy"])->name("employe.destroy");
-    Route::get('/menu/create', [MenuController::class, "create"])->name("menu.create");
+
+    //show list produit
     Route::get('/menu', [MenuController::class, "index"])->name("menu.index");
+    //create produit
+    Route::get('/menu/create', [MenuController::class, "create"])->name("menu.create");
+    Route::post('/menu', [MenuController::class, "store"])->name("menu.store");
 });
 
 //Serveur Interface

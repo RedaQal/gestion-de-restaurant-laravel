@@ -11,8 +11,16 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
+
+
     public function run(): void
     {
+        $this->call(
+            [
+                CategorieSeeder::class,
+                EmployeSeeder::class,
+            ]
+            );
         // User::factory(10)->create();
 
         User::factory()->create([
