@@ -37,6 +37,9 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
     //create produit
     Route::get('/menu/create', [MenuController::class, "create"])->name("menu.create");
     Route::post('/menu', [MenuController::class, "store"])->name("menu.store");
+    //delete produit
+    Route::delete('/menu/{produit}', [MenuController::class, "destroy"])->name("menu.destroy");
+
 });
 
 //Serveur Interface

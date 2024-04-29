@@ -22,6 +22,13 @@ class MenuController extends Controller
         return view('dashboard.Admin.menu.create', compact('categories'));
     }
 
+    public function destroy(Produit $produit)
+    {
+        $this->deleteImg($produit->images);
+        $produit->delete();
+        return back()->with('success', "Produit <strong> $produit->label</strong> supprimer avec succes");
+    }
+
     public function store(ProduitsRequest $request)
     {
         $fieldForm = $request->validated();
@@ -43,5 +50,15 @@ class MenuController extends Controller
                 ]);
             }
         }
+    }
+
+    public function deleteImg($images)
+    {
+        foreach ($images as $image) :
+            $path = public_path("storage/" . $image->url);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        endforeach;
     }
 }

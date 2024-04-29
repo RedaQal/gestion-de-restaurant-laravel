@@ -43,7 +43,7 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    vous etes sur de vouloir supprimer <strong>{{ $employe->name }} </strong>?
+                                    vous êtes sur de vouloir supprimer <strong>{{ $employe->name }} </strong>?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
