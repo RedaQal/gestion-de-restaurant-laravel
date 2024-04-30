@@ -7,6 +7,7 @@ use App\Models\Serveur;
 use App\Models\Caissiere;
 use App\Models\Cuisinier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\EmployeRequest;
 
@@ -14,7 +15,7 @@ class EmployeController extends Controller
 {
     public function index()
     {
-        $employes = Employe::paginate(8);
+        $employes = Employe::where('id', "!=", Auth::user()->id)->paginate(8);
         return view('dashboard.Admin.employe.index', compact('employes'));
     }
 
@@ -50,7 +51,7 @@ class EmployeController extends Controller
                     break;
             }
         }
-        $message = 'Employe <strong>'  . $request->name .'</strong> ajoute avec succes <br> Email : <strong>' . $request->email .'</strong> <br> Mot de passe : ' . '<strong>' . $password . '</strong>';
+        $message = 'Employe <strong>'  . $request->name . '</strong> ajoute avec succes <br> Email : <strong>' . $request->email . '</strong> <br> Mot de passe : ' . '<strong>' . $password . '</strong>';
         return to_route('dashboard.employe.create')->with('success', $message);
     }
 
@@ -61,10 +62,10 @@ class EmployeController extends Controller
 
     public function update(EmployeRequest $request, Employe $employe)
     {
-        $fieldForm = $request->only("name","email", "tel", "salaire");
+        $fieldForm = $request->only("name", "email", "tel", "salaire");
         $employe->update($fieldForm);
-        $message = 'Employe ' .'<strong>'. $request->name .'</strong>'. ' modifier avec succes <br>';
-        return to_route('dashboard.employe.index')->with('success',$message);
+        $message = 'Employe ' . '<strong>' . $request->name . '</strong>' . ' modifier avec succes <br>';
+        return to_route('dashboard.employe.index')->with('success', $message);
     }
     public function destroy(Employe $employe)
     {

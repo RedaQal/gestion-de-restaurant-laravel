@@ -78,8 +78,7 @@
                                         <div class="mb-3">
                                             <label for="prix">Prix</label>
                                             <input type="text" name="prix" id="prix" class="form-control"
-                                                value="{{ $produit->prix }}"
-                                                placeholder="Prix">
+                                                value="{{ $produit->prix }}" placeholder="Prix">
                                         </div>
                                         <div class="float-end">
                                             <button type="submit" class="btn btn-warning">Modifier</button>

@@ -56,4 +56,16 @@
             </div>
         </form>
     </div>
+    <script>
+        const close = document.getElementById('close');
+        const alert = document.getElementById('alert');
+        if (close) {
+            close.addEventListener('click', () => {
+                alert.remove();
+            })
+            setInterval(() => {
+                alert.remove();
+            }, 5000);
+        }
+    </script>
 </x-dashbordComponents.Admin.master>

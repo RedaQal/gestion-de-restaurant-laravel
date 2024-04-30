@@ -80,5 +80,4 @@
             }, 5000);
         }
     </script>
-
 </x-dashbordComponents.Admin.master>

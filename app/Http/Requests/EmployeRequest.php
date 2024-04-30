@@ -27,8 +27,9 @@ class EmployeRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => "required|email|unique:employes,email,$employe",
-            'tel' => 'required',
+            'tel' => ["required","regex:/^(\+212|0)\d{9}$/i"],
             'salaire' => 'required|numeric',
         ];
+
     }
 }

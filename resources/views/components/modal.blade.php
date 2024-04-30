@@ -18,7 +18,7 @@
                 <hr>
                 <div class=" m-auto">
                     <p class="text-capitalize fw-bold text-center h3"> {{ $produit->label }}</p>
-                    <p class="mt-3">{{ $produit->description }}</p>
+                    <p class="mt-3 text-break">{{ $produit->description }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span><span class="fw-bold">Prix:</span> {{ $produit->prix }} MAD</span>
                         <span> <span class="fw-bold">categorie :</span> {{ $produit->categorie->label }}</span>
@@ -46,8 +46,10 @@
     })
 
     const myModal = document.getElementById('myModal');
+    if (myModal) {
 
-    myModal.addEventListener('shown.bs.modal', () => {
-        myModal.handleUpdate()
-    })
+        myModal.addEventListener('shown.bs.modal', () => {
+            myModal.handleUpdate()
+        })
+    }
 </script>

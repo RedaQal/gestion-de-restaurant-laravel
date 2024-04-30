@@ -11,6 +11,4 @@ class Employe extends Model
     protected $fillable=[
         'name','role','email','tel','salaire','password'
     ];
-
-
 }

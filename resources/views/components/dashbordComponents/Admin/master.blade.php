@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,47 +67,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-agenda"></i>
-                        <span>Task</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
-                        <i class="lni lni-layout"></i>
-                        <span>Multi Level</span>
-                    </a>
-                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
-                                Two Links
-                            </a>
-                            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Link 1</a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Link 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-popup"></i>
-                        <span>Notification</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-cog"></i>
-                        <span>Setting</span>
-                    </a>
-                </li>
+
             </ul>
             <div class="sidebar-footer">
                 <a href="{{ route('login.logout') }}" class="sidebar-link">
@@ -126,16 +87,12 @@
                                 {{ Str::upper(Auth::user()->name) }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end rounded">
-                                <a href="#" class="dropdown-item">
-                                    <i class="lni lni-user me-2"></i>
+                                <a href="{{ route('dashboard.profile.index') }}" class="dropdown-item">
+                                    <i class="fa-solid fa-user me-2"></i>
                                     <span class="text">Profile</span>
                                 </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="lni lni-cog me-2"></i>
-                                    <span class="text">Setting</span>
-                                </a>
                                 <a href="{{ route('login.logout') }}" class="dropdown-item">
-                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
                                     <span class="text">Logout</span>
                                 </a>
                             </div>
