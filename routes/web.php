@@ -6,6 +6,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class, "index"])->name("index.index");
@@ -50,6 +51,10 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
     Route::put('/profile/security', [ProfileController::class, "updatePassword"])->name("profile.security.update");
 });
 
-//Serveur Interface
 
+Route::prefix("commande")->name("commande.")->group(function(){
+    Route::get('/',[CommandeController::class,"index"])->name("index");
+});
+
+//Serveur Interface
 Route::get('/serveur', [DashboardController::class, "serveur"])->name("serveur.index");
