@@ -3,3 +3,4 @@
     {{ $slot }}
     <button class="btn-close position-absolute" style="right: 10px; top:10px;" id="close"></button>
 </div>
+

@@ -1,0 +1,390 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  div.container {
+    background-color: rgba(250, 235, 215, 0.193);
+    height: 100vh;
+    display: flex;
+  }
+
+  div.container div.menu {
+    width: 75%;
+  }
+
+  div.container div.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  div.container div.header div.logo {
+    width: 150px;
+  }
+  div.container div.header div.logo img {
+    width: 100%;
+  }
+
+  div.container div.header div.search {
+    position: relative;
+    width: 65%;
+    height: 40px;
+  }
+
+  div.container div.header div.search input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #ecf4fe;
+    padding: 15px 40px;
+  }
+
+  div.container div.header div.search input:focus {
+    outline: none;
+  }
+
+  div.container div.header div.search i {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  div.container div.header div.info {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease;
+  }
+
+  div.infoHover {
+    position: absolute;
+    right: 32%;
+    background-color: rgb(255, 149, 0);
+    width: 200px;
+    height: 90px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+  }
+
+  div.infoHover p:first-child {
+    margin-top: 7px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  div.infoHover p:nth-child(2) {
+    background-color: rgb(255, 165, 39);
+    border-radius: 10px;
+    padding: 6px 10px;
+    width: 100px;
+    margin: 5px auto;
+    color: white;
+  }
+
+  div.infoHover span {
+    font-size: 0.7rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  div.container div.header div.info i {
+    font-size: 20px;
+    border: 0.2px rgba(0, 0, 0, 0.219) solid;
+    border-radius: 50%;
+    padding: 10px 12px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  div.container div.header div.info i:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 149, 0);
+  }
+
+  div.container div.header div.backTo a {
+    background-color: rgb(255, 149, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  /*categorie section*/
+
+  div.container div.categories {
+    margin: 0 auto;
+    width: 80%;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+    background-color: white;
+  }
+
+  div.container div.categories a.categorie {
+    border: 0.2px rgb(185, 185, 185) solid;
+    border-radius: 45px;
+    width: 75px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  div.container div.categories a.categorie img {
+    margin-top: 10px;
+    width: 70%;
+    border-radius: 50%;
+    padding: 5px;
+    border: 0.2px rgb(185, 185, 185) solid;
+    background-color: white;
+  }
+
+  div.container div.categories a.categorie p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  div.container div.categories a.categorie:hover {
+    background-color: rgb(255, 149, 0);
+    color: white;
+    cursor: pointer;
+  }
+
+  /*alert section*/
+
+  div.container div.alert {
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background-color: rgb(255, 149, 0);
+    color: white;
+  }
+
+  div.container div.alert i {
+    padding: 10px;
+    border: 0.2px rgb(185, 185, 185) solid;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  div.container div.alert p {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  /*menu section*/
+
+  div.categoriesFood {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  div.container div.food {
+    margin: 1rem 0 0 1rem;
+  }
+
+  div.container div.food h1 {
+    margin-top: 1rem;
+    color: rgb(255, 128, 0);
+  }
+
+  div.container div.food div.card {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 30%;
+  }
+
+  div.container div.food div.card img {
+    width: 100%;
+    height: 225px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+  }
+
+  div.container div.food div.card p.name {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  div.container div.food div.card p.description {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    font-weight: bold;
+    color: rgba(128, 128, 128, 0.701);
+  }
+
+  div.container div.food div.card div.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0.5rem;
+  }
+
+  div.container div.food div.card div.cardFooter p {
+    background-color: rgb(255, 149, 0);
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  div.container div.food div.card div.cardFooter button {
+    background-color: white;
+    border: 0.2px rgb(185, 185, 185) solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: rgb(255, 149, 0);
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  div.container div.food div.card div.cardFooter button:hover {
+    background-color: rgb(255, 149, 0);
+    color: white;
+  }
+
+  /*panier section*/
+
+
+  div.commandes {
+    border-left: 0.2px rgba(185, 185, 185, 0.201) solid;
+    margin-top: 1rem;
+    position: fixed;
+    width: 25%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  div.commandes h3 {
+    margin-left: 1.3rem;
+  }
+
+  div.CommandeHeader {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    background-color: #ecf4fe;
+    color: black;
+    margin: 0 0 2rem 1.3rem;
+  }
+
+  div.CommandeHeader i {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  div.CommandeHeader h1 {
+    font-size: 1.2rem;
+  }
+
+  div.commande {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.2px rgba(185, 185, 185, 0.26) solid;
+    width: 100%;
+    position: relative;
+  }
+
+  div.commande i.deleteCommande{
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  div.commande img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+
+  div.commande p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 3.5rem;
+  }
+
+  div.listCommande::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  div.listCommande {
+    height: 65vh;
+    overflow: auto;
+    margin-left: 1.3rem;
+  }
+
+  .Quantity {
+    width: 35%;
+    padding: 7.5px;
+    background-color: #ecf4fe;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+  }
+
+  .Quantity button {
+    display: flex;
+    padding: 1rem;
+    cursor: pointer;
+    width: 100%;
+    background: transparent;
+    border: none;
+  }
+
+  .Quantity button:last-child {
+    justify-content: flex-end;
+  }
+
+  div.addCommande {
+    border-top: 0.2px rgba(185, 185, 185, 0.252) solid;
+  }
+  div.addCommande div.total {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0 1rem 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bolder;
+  }
+
+  div.addCommande button {
+    border: none;
+    background-color: rgb(255, 128, 0);
+    padding: 15px 0;
+    width: 80%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 3rem;
+  }
