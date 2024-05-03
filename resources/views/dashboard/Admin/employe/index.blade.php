@@ -1,7 +1,7 @@
 <x-dashbordComponents.Admin.master title="Liste des employes">
     <div class="w-75 m-auto mt-5">
         @if (session()->has('success'))
-            <x-alert type="success">
+            <x-alert>
                 {!! session('success') !!}
             </x-alert>
         @endif
@@ -65,19 +65,4 @@
             {{ $employes->links('pagination::bootstrap-4') }}
         </div>
     </div>
-    <script>
-        const agent = document.getElementById("agent");
-        const role = document.getElementById('role');
-        const post = document.getElementById('post');
-        const close = document.getElementById('close');
-        const alert = document.getElementById('alert');
-        if (close) {
-            close.addEventListener('click', () => {
-                alert.remove();
-            })
-            setInterval(() => {
-                alert.remove();
-            }, 5000);
-        }
-    </script>
 </x-dashbordComponents.Admin.master>

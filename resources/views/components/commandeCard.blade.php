@@ -1,7 +1,5 @@
 @props(['produit'])
 {{-- card --}}
-
-
 <div class="card">
     <div class="card-body">
         @if (count($produit->images) > 0)

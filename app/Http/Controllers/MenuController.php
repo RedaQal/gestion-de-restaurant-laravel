@@ -12,7 +12,7 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $produits = Produit::paginate(10);
+        $produits = Produit::paginate(12);
         return view('dashboard.Admin.menu.index', compact('produits'));
     }
 

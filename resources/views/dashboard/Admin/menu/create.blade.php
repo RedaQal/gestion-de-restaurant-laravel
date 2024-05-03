@@ -2,7 +2,7 @@
 
     <div class="container my-3 w-50">
         @if (session()->has('success'))
-            <x-alert type="success">
+            <x-alert>
                 {!! session('success') !!}
             </x-alert>
         @endif
@@ -56,16 +56,4 @@
             </div>
         </form>
     </div>
-    <script>
-        const close = document.getElementById('close');
-        const alert = document.getElementById('alert');
-        if (close) {
-            close.addEventListener('click', () => {
-                alert.remove();
-            })
-            setInterval(() => {
-                alert.remove();
-            }, 5000);
-        }
-    </script>
 </x-dashbordComponents.Admin.master>

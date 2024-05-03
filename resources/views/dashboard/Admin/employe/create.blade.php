@@ -64,15 +64,6 @@
         const agent = document.getElementById("agent");
         const role = document.getElementById('role');
         const post = document.getElementById('post');
-        const close = document.getElementById('close');
-        const alert = document.getElementById('alert');
-
-        if (close) {
-            close.addEventListener('click', () => {
-                alert.remove();
-            })
-        }
-
         role.addEventListener("click", function() {
             if (this.value === 'agent') {
                 agent.classList.remove('d-none');
