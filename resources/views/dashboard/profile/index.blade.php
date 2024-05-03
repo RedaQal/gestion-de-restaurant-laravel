@@ -34,7 +34,7 @@
                         {{-- Form Group (username) --}}
                         <div class="mb-3">
                             <label class="small mb-1" for="inputUsername">Nom compléte :</label>
-                            <input class="form-control" name="name" id="inputUsername" type="text"
+                            <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" id="inputUsername" type="text"
                                 placeholder="Nom compléte" value="{{ old('name', $user->name) }}">
                             @error('name')
                                 <small class="text-danger">{{ $message }}</small>
@@ -43,13 +43,13 @@
                         {{-- Form Group (email address) --}}
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Email :</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Email"
+                            <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" value="{{ old('email', $user->email) }}" id="inputEmailAddress" type="email" placeholder="Email"
                                 value="{{ $user->email }}" disabled>
                         </div>
                         {{-- Form Group (phone number) --}}
                         <div class="md-6">
                             <label class="small mb-1" for="inputPhone">Numéro de Téléphone :</label>
-                            <input class="form-control" name="tel" id="inputPhone" type="tel"
+                            <input class="form-control {{ $errors->has('tel') ? 'is-invalid' : '' }}" name="tel" id="inputPhone" type="tel"
                                 placeholder="Numéro de Téléphone " value="{{ old('tel', $user->tel) }}">
                             @error('tel')
                                 <small class="text-danger">{{ $message }}</small>
@@ -58,13 +58,13 @@
                         {{-- Form Group (Salaire) --}}
                         <div class="md-6 mt-2">
                             <label class="small mb-1" for="inputPhone">Salaire :</label>
-                            <input class="form-control" id="inputPhone" type="tel" placeholder=""
+                            <input class="form-control {{ $errors->has('salaire') ? 'is-invalid' : '' }}" name="salaire" value="{{ old('salaire', $user->salaire) }}" id="inputPhone" type="tel" placeholder=""
                                 value="{{ $user->salaire }} MAD" readonly disabled>
                         </div>
                         {{-- Form Group (Role) --}}
                         <div class="md-6 mt-2">
                             <label class="small mb-1" for="inputPhone">Role :</label>
-                            <input class="form-control" id="inputPhone" type="tel" placeholder=""
+                            <input class="form-control {{ $errors->has('role') ? 'is-invalid' : '' }}" name="role" value="{{ old('role', $user->role) }}" id="inputPhone" type="tel" placeholder=""
                                 value="{{ $user->role }} " readonly disabled>
                         </div>
                         {{-- date of create profile --}}

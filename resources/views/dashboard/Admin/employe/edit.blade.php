@@ -6,7 +6,7 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="fullName" class="form-label">Nom :</label>
-                <input type="text" name="name" class="form-control" id="fullName" placeholder="Nom complete"
+                <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="fullName" placeholder="Nom complete"
                     value="{{ old('name', $employe->name) }}">
                 @error('name')
                     <small class="text-danger">{{ $message }}</small>
@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label for="Email" class="form-label">Email :</label>
-                <input type="text" name="email" class="form-control" id="Email" placeholder="example@gmail.com"
+                <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="Email" placeholder="example@gmail.com"
                     value="{{ old('email', $employe->email) }}">
                 @error('email')
                     <small class="text-danger">{{ $message }}</small>
@@ -22,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label for="tel" class="form-label">Téléphone :</label>
-                <input type="tel" name="tel" class="form-control" id="tel" placeholder="+212 XXXXXXXXX"
+                <input type="tel" name="tel" class="form-control {{ $errors->has('tel') ? 'is-invalid' : '' }}" id="tel" placeholder="+212 XXXXXXXXX"
                     value="{{ old('tel', $employe->tel) }}">
                 @error('tel')
                     <small class="text-danger">{{ $message }}</small>
@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label for="salaire" class="form-label">Salaire :</label>
-                <input type="text" class="form-control" name="salaire" id="salaire" placeholder="Salaire"
+                <input type="text" class="form-control {{$errors->has('salaire') ? 'is-invalid' : ''}}" name="salaire" id="salaire" placeholder="Salaire"
                     value="{{ old('salaire', $employe->salaire) }}">
                 @error('salaire')
                     <small class="text-danger">{{ $message }}</small>

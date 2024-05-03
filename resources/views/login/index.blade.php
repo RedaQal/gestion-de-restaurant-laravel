@@ -39,7 +39,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email :</label>
-                            <input type="text" class="form-control" id="email" name="email"
+                            <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="email" name="email"
                                 placeholder="email@example.com" value="{{ old('email') }}">
                             @error('email')
                                 <small class="text-danger">{{ $message }}</small>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Mot de passe :</label>
-                            <input type="password" class="form-control" id="password" name="password"
+                            <input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" id="password" name="password"
                                 placeholder ="mot de passe">
                             @error('password')
                                 <small class="text-danger">{{ $message }}</small>
