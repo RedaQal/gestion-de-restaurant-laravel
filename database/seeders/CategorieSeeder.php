@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CategorieSeeder extends Seeder
 {
@@ -20,17 +20,19 @@ class CategorieSeeder extends Seeder
                 'label' => 'deserts',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'image' => '',
             ],
         );
         DB::table(
             'categories'
         )->insert(
 
-                [
-                    'label' => 'plats',
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
+            [
+                'label' => 'plats',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'image' => '',
+            ],
 
         );
         DB::table(
@@ -40,6 +42,7 @@ class CategorieSeeder extends Seeder
                 'label' => 'boissons',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'image' => '',
             ],
         );
         DB::table(
@@ -49,6 +52,7 @@ class CategorieSeeder extends Seeder
                 'label' => 'salads',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'image' => '',
             ],
         );
         DB::table(
@@ -58,6 +62,7 @@ class CategorieSeeder extends Seeder
                 'label' => 'soups',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'image' => '',
             ],
         );
         DB::table(
@@ -67,6 +72,7 @@ class CategorieSeeder extends Seeder
                 'label' => 'sandwiches',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'image' => '',
             ]
         );
     }

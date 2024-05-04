@@ -6,38 +6,38 @@
     scroll-behavior: smooth;
 }
 
-div.container {
+div.containerCo {
     background-color: rgba(250, 235, 215, 0.193);
     min-height: 100vh;
     width: 75%;
     display: flex;
 }
 
-div.menu {
+div.menuCo {
     width: 100%;
 }
 
-div.container div.header {
+div.containerCo div.header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 8px 0;
 }
 
-div.container div.header div.logo {
+div.containerCo div.header div.logo {
     width: 150px;
 }
-div.container div.header div.logo img {
+div.containerCo div.header div.logo img {
     width: 100%;
 }
 
-div.container div.header div.search {
+div.containerCo div.header div.search {
     position: relative;
     width: 65%;
     height: 40px;
 }
 
-div.container div.header div.search input {
+div.containerCo div.header div.search input {
     width: 100%;
     border: none;
     border-radius: 10px;
@@ -45,17 +45,17 @@ div.container div.header div.search input {
     padding: 15px 40px;
 }
 
-div.container div.header div.search input:focus {
+div.containerCo div.header div.search input:focus {
     outline: none;
 }
 
-div.container div.header div.search i {
+div.containerCo div.header div.search i {
     position: absolute;
     top: 15px;
     left: 15px;
 }
 
-div.container div.header div.info {
+div.containerCo div.header div.info {
     width: 50px;
     height: 50px;
     display: flex;
@@ -98,7 +98,7 @@ div.infoHover span {
     font-weight: bold;
 }
 
-div.container div.header div.info i {
+div.containerCo div.header div.info i {
     font-size: 20px;
     border: 0.2px rgba(0, 0, 0, 0.219) solid;
     border-radius: 50%;
@@ -107,12 +107,12 @@ div.container div.header div.info i {
     cursor: pointer;
 }
 
-div.container div.header div.info i:hover {
+div.containerCo div.header div.info i:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(255, 149, 0);
 }
 
-div.container div.header div.backTo a {
+div.containerCo div.header div.backTo a {
     background-color: rgb(255, 149, 0);
     border: none;
     border-radius: 5px;
@@ -125,7 +125,7 @@ div.container div.header div.backTo a {
 
 /*categorie section*/
 
-div.container div.categories {
+div.containerCo div.categories {
     margin: 0 auto;
     width: 100%;
     height: 150px;
@@ -145,7 +145,7 @@ p.aucunProduit i {
     margin-right: 1rem;
 }
 
-div.container div.categories a.categorie {
+div.containerCo div.categories a.categorie {
     border: 0.2px rgb(185, 185, 185) solid;
     border-radius: 45px;
     width: 75px;
@@ -157,7 +157,7 @@ div.container div.categories a.categorie {
     color: black;
 }
 
-div.container div.categories a.categorie img {
+div.containerCo div.categories a.categorie img {
     margin-top: 10px;
     width: 70%;
     border-radius: 50%;
@@ -166,13 +166,13 @@ div.container div.categories a.categorie img {
     background-color: white;
 }
 
-div.container div.categories a.categorie p {
+div.containerCo div.categories a.categorie p {
     margin-top: 10px;
     font-weight: bold;
     font-size: 0.8rem;
 }
 
-div.container div.categories a.categorie:hover {
+div.containerCo div.categories a.categorie:hover {
     background-color: rgb(255, 149, 0);
     color: white;
     cursor: pointer;
@@ -180,7 +180,7 @@ div.container div.categories a.categorie:hover {
 
 /*alert section*/
 
-div.container div.alert {
+div.containerCo div.alert {
     padding-left: 2rem;
     display: flex;
     align-items: center;
@@ -189,7 +189,7 @@ div.container div.alert {
     color: white;
 }
 
-div.container div.alert i {
+div.containerCo div.alert i {
     padding: 10px;
     border: 0.2px rgb(185, 185, 185) solid;
     font-size: 1.3rem;
@@ -197,12 +197,12 @@ div.container div.alert i {
     margin-right: 1rem;
 }
 
-div.container div.alert p {
+div.containerCo div.alert p {
     font-size: 0.9rem;
     font-weight: bold;
 }
 
-/*menu section*/
+/*menuCo section*/
 
 div.categoriesFood {
     margin-top: 1rem;
@@ -212,16 +212,16 @@ div.categoriesFood {
     align-items: center;
 }
 
-div.container div.food {
+div.containerCo div.food {
     margin: 1rem 0 0 1rem;
 }
 
-div.container div.food h1 {
+div.containerCo div.food h1 {
     margin-top: 1rem;
     color: rgb(255, 128, 0);
 }
 
-div.container div.food div.card {
+div.containerCo div.food div.card {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -229,27 +229,27 @@ div.container div.food div.card {
     height: 260px;
 }
 
-div.container div.food div.card img {
+div.containerCo div.food div.card img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
   width: 100%;
 }
 
-div.container div.food div.card p.name {
+div.containerCo div.food div.card p.name {
     margin: 0.5rem 0 0.5rem 0.5rem;
     font-size: 1rem;
     font-weight: bold;
 }
 
-div.container div.food div.card p.description {
+div.containerCo div.food div.card p.description {
     font-size: 0.9rem;
     margin: 0.5rem 0 0.5rem 0.5rem;
     font-weight: bold;
     color: rgba(128, 128, 128, 0.701);
 }
 
-div.container div.food div.card div.cardFooter {
+div.containerCo div.food div.card div.cardFooter {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -260,7 +260,7 @@ div.container div.food div.card div.cardFooter {
   min-height: 85%;
 }
 
-div.container div.food div.card div.cardFooter p {
+div.containerCo div.food div.card div.cardFooter p {
     background-color: rgb(255, 149, 0);
     font-size: 0.9rem;
     font-weight: bold;
@@ -269,7 +269,7 @@ div.container div.food div.card div.cardFooter p {
     color: white;
 }
 
-div.container div.food div.card div.cardFooter button {
+div.containerCo div.food div.card div.cardFooter button {
     background-color: white;
     border: 0.2px rgb(185, 185, 185) solid;
     border-radius: 5px;
@@ -279,7 +279,7 @@ div.container div.food div.card div.cardFooter button {
     font-weight: bold;
 }
 
-div.container div.food div.card div.cardFooter button:hover {
+div.containerCo div.food div.card div.cardFooter button:hover {
     background-color: rgb(255, 149, 0);
     color: white;
 }

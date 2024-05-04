@@ -54,6 +54,7 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
 
 Route::prefix("commande")->name("commande.")->group(function(){
     Route::get('/',[CommandeController::class,"index"])->name("index");
+    Route::post('/',[CommandeController::class,"store"])->name("store");
 });
 
 //Serveur Interface
