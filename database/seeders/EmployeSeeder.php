@@ -49,5 +49,49 @@ class EmployeSeeder extends Seeder
                 'updated_at' => now(),
             ]
         );
+        DB::table(
+            'employes'
+        )->insert(
+            [
+                'name' => 'caissier',
+                'role' => 'agent',
+                'email' => 'caissier@gmail.com',
+                'password' => bcrypt('1234'),
+                'tel' => "0622222222",
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+        DB::table(
+            'caissieres'
+        )->insert(
+            [
+                'id_employe' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+        DB::table(
+            'employes'
+        )->insert(
+            [
+                'name' => 'cuisinier',
+                'role' => 'agent',
+                'email' => 'cuisinier@gmail.com',
+                'password' => bcrypt('1234'),
+                'tel' => "0622222222",
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+        DB::table(
+            'cuisiniers'
+        )->insert(
+            [
+                'id_employe' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
     }
 }

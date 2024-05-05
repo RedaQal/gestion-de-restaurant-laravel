@@ -11,4 +11,16 @@ class Employe extends Model
     protected $fillable=[
         'name','role','email','tel','salaire','password'
     ];
+
+    public function serveur(){
+        return $this->hasOne(Serveur::class,'id_employe','id');
+    }
+
+    public function cuisinier(){
+        return $this->hasOne(Cuisinier::class,'id_employe','id');
+    }
+
+    public function caissiere(){
+        return $this->hasOne(Caissiere::class,'id_employe','id');
+    }
 }

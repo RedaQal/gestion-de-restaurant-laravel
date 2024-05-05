@@ -6,13 +6,14 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServeurController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class, "index"])->name("index.index");
 
 //login route
-Route::middleware(['guest'])->prefix("login")->name("login")->group(function () {
+Route::middleware('multiLogin')->prefix("login")->name("login")->group(function () {
     Route::get('/', [LoginController::class, "index"]);
     Route::post('/', [LoginController::class, "login"])->name(".login");
 });
@@ -52,10 +53,12 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
 });
 
 
-Route::prefix("commande")->name("commande.")->group(function(){
-    Route::get('/',[CommandeController::class,"index"])->name("index");
-    Route::post('/',[CommandeController::class,"store"])->name("store");
+Route::prefix("commande")->name("commande.")->group(function () {
+    Route::get('/', [CommandeController::class, "index"])->name("index");
+    Route::post('/', [CommandeController::class, "store"])->name("store");
 });
 
 //Serveur Interface
-Route::get('/serveur', [DashboardController::class, "serveur"])->name("serveur.index");
+Route::middleware(['auth','serveur'])->prefix("serveur")->name("serveur.")->group(function () {
+    Route::get('/', [ServeurController::class, "index"])->name("index");
+});

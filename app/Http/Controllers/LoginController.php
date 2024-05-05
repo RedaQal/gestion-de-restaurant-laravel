@@ -19,7 +19,20 @@ class LoginController extends Controller
         $credentials = $request->validated();
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard.index');
+            $user = Auth::user();
+            if ($user->role == 'admin') {
+                return to_route('dashboard.index');
+            } else if ($user->role == 'agent') {
+                if (Employe::find($user->id)->serveur) {
+                    return redirect()->route('serveur.index');
+                }
+                if (Employe::find($user->id)->cuisinier) {
+                    return "cuisinier";
+                }
+                if (Employe::find($user->id)->caissiere) {
+                    return "caissier";
+                }
+            }
         } else {
             return redirect()->back()->with('error', 'Email ou Mot de passe invalide')->onlyInput('email');
         }
