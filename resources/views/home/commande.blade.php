@@ -37,8 +37,8 @@
                 </div>
             </div>
             <div class="infoHover">
-                <p>Nous somme à</p>
-                <p>Oujda</p>
+                <p class="m-0">Nous somme à</p>
+                <p class="m-0 text-center">Oujda</p>
                 <span>NOUS ATTENDONS VOTRE VISITE</span>
             </div>
             <div class="categories">
@@ -49,9 +49,9 @@
                     </a>
                 @endforeach
             </div>
-            <div class="alert">
+            <div class="alert__commande">
                 <i class="fa-solid fa-utensils"></i>
-                <p>Nous proposons les meilleurs types de nourriture .</p>
+                <p class="m-0">Nous proposons les meilleurs types de nourriture .</p>
             </div>
             <div class="food">
                 @foreach ($categories as $categorie)
@@ -64,7 +64,7 @@
                         @else
                             @foreach ($produits as $produit)
                                 @if ($produit->id_categorie === $categorie->id)
-                                    <x-commandecard :produit="$produit" />
+                                    <x-commandeCard :produit="$produit" />
                                 @endif
                             @endforeach
                         @endif
@@ -78,7 +78,7 @@
                 <i class="fa-solid fa-cart-shopping"></i>
                 <h1>Votre Commande</h1>
             </div>
-            <h3>List des commandes :</h3>
+            <h5>Liste des commandes :</h5>
             <div class="listCommande" id="listCommande">
             </div>
             <div class="addCommande">

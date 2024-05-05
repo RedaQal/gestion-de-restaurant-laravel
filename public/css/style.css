@@ -355,79 +355,6 @@ img {
     padding: 0 1.5rem;
 }
 
-/*========== MENU ==========*/
-.menu__container {
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-}
-
-.menu__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--container-color);
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(3, 74, 40, 0.15);
-    padding: 0.75rem;
-}
-
-.menu__img {
-    width: 100px;
-    align-self: center;
-    margin-bottom: var(--mb-2);
-}
-
-.menu__name,
-.menu__preci {
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
-}
-
-.menu__name {
-    font-size: var(--normal-font-size);
-}
-
-.menu__detail,
-.menu__preci {
-    font-size: var(--small-font-size);
-}
-
-.menu__detail {
-    margin-bottom: var(--mb-1);
-}
-
-.menu__button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    padding: 0.625rem 0.813rem;
-    border-radius: 0.5rem 0 0.5rem 0;
-}
-
-/*========== APP ==========*/
-.app__data {
-    text-align: center;
-}
-
-.app__description {
-    margin-bottom: var(--mb-5);
-}
-
-.app__stores {
-    margin-bottom: var(--mb-4);
-}
-
-.app__store {
-    width: 120px;
-    margin: 0 var(--mb-1);
-}
-
-.app__img {
-    width: 230px;
-    justify-self: center;
-}
-
 /*========== CONTACT ==========*/
 .contact__container {
     text-align: center;
@@ -502,16 +429,13 @@ img {
 /*========== MEDIA QUERIES ==========*/
 @media screen and (min-width: 576px) {
     .home__container,
-    .about__container,
-    .app__container {
+    .about__container {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
     }
 
     .about__data,
     .about__initial,
-    .app__data,
-    .app__initial,
     .contact__container,
     .contact__initial {
         text-align: initial;
@@ -569,26 +493,8 @@ img {
         justify-items: center;
     }
 
-    .services__container,
-    .menu__container {
+    .services__container {
         margin-top: var(--mb-6);
-    }
-
-    .menu__container {
-        grid-template-columns: repeat(3, 210px);
-        column-gap: 4rem;
-    }
-
-    .menu__content {
-        padding: 1.5rem;
-    }
-
-    .menu__img {
-        width: 130px;
-    }
-
-    .app__store {
-        margin: 0 var(--mb-1) 0 0;
     }
 }
 
@@ -602,8 +508,7 @@ img {
         width: 500px;
     }
 
-    .about__container,
-    .app__container {
+    .about__container{
         column-gap: 7rem;
     }
 }
