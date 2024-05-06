@@ -27,7 +27,8 @@
             </header>
             <nav class="dashboard-nav-list">
                 <a href="{{ route('serveur.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'active' : '' }}"><i class="fa-solid fa-clipboard-list"></i>Tous les commandes </a>
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'active' : '' }}"><i
+                        class="fa-solid fa-clipboard-list"></i>Tous les commandes </a>
                 <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-list-check"></i> Mes commandes </a>
                 <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-cart-plus"></i>Passer
                     commande </a>
@@ -36,7 +37,7 @@
                         class="fas fa-user"></i> Profile </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('login.logout') }}" class="dashboard-nav-item "><i class="fas fa-sign-out-alt"></i>
-                    Logout </a>
+                    Déconnexion </a>
             </nav>
         </div>
         <div class='dashboard-app'>
@@ -54,6 +55,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <script>
         const mobileScreen = window.matchMedia("(max-width: 990px )");
         $(document).ready(function() {

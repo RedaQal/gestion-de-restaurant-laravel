@@ -66,17 +66,17 @@
                             </div>
                             {{-- Form Group (Salaire) --}}
                             <div class="md-6 mt-2">
-                                <label class="small mb-1" for="inputPhone">Salaire :</label>
+                                <label class="small mb-1" for="salaire">Salaire :</label>
                                 <input class="form-control {{ $errors->has('salaire') ? 'is-invalid' : '' }}"
-                                    name="salaire" value="{{ old('salaire', $user->salaire) }}" id="inputPhone"
+                                    name="salaire" value="{{ old('salaire', $user->salaire) }}" id="salaire"
                                     type="tel" placeholder="" value="{{ $user->salaire }} MAD" readonly disabled>
                             </div>
                             {{-- Form Group (Role) --}}
                             <div class="md-6 mt-2">
-                                <label class="small mb-1" for="inputPhone">Role :</label>
+                                <label class="small mb-1" for="role">Role :</label>
                                 <input class="form-control {{ $errors->has('role') ? 'is-invalid' : '' }}"
-                                    name="role" value="{{ old('role', $user->role) }}" id="inputPhone"
-                                    type="tel" placeholder="" value="{{ $user->role }} " readonly disabled>
+                                    name="role" value="{{ old('role', $user->role) }}" id="role" type="tel"
+                                    placeholder="" value="{{ $user->role }} " readonly disabled>
                             </div>
                             {{-- date of create profile --}}
                             <div class="md-6 mt-2 float-end text-secondary h6">

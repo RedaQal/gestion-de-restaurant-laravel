@@ -403,6 +403,46 @@ h1,
     margin-right: 1rem;
 }
 
+/* style card show commande*/
+
+.card-sl {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image-commande{
+    height:25vh;
+}
+.card-image-commande img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0px 0;
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-text-price {
+    padding: 10px 15px;
+    background: #fff;
+    font-size: 14px;
+    color: #e69500;
+}
+
+.card-text {
+    padding: 10px 15px;
+    background: #fff;
+    font-size: 14px;
+    color: #4e4d4a;
+}
+
 @media (min-width: 992px) {
     .dashboard-app {
         margin-left: 238px;

@@ -74,7 +74,7 @@
             <div class="sidebar-footer">
                 <a href="{{ route('login.logout') }}" class="sidebar-link">
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Decconnexion</span>
+                    <span>Déconnexion</span>
                 </a>
             </div>
         </aside>
@@ -95,7 +95,7 @@
                                 </a>
                                 <a href="{{ route('login.logout') }}" class="dropdown-item">
                                     <i class="fa-solid fa-right-from-bracket me-2"></i>
-                                    <span class="text">Logout</span>
+                                    <span class="text">Déconnexion</span>
                                 </a>
                             </div>
                         </li>

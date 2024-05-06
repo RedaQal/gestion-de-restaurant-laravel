@@ -61,7 +61,10 @@ Route::prefix("commande")->name("commande.")->group(function () {
 
 //Serveur Interface
 Route::middleware(['auth', 'serveur'])->prefix("serveur")->name("serveur.")->group(function () {
+    //all commande
     Route::get('/', [ServeurController::class, "index"])->name("index");
+    //show commande
+    Route::get('/{commande}/show',[ServeurController::class,'show'])->name('show');
     //delete commande
     Route::delete('/{commande}',[ServeurController::class,'destroy'])->name('destroy');
 

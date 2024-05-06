@@ -44,7 +44,7 @@
                         <div class="mb-3">
                             <label class="small mb-1" for="confirmPassword">Confirmer mot de passe</label>
                             <input class="form-control" id="confirmPassword" type="password"
-                                name="password_confirmation" placeholder="Confirm new password">
+                                name="password_confirmation" placeholder="Confirmer le nouveau mot de passe">
                         </div>
                         @if (session()->has('error'))
                             <small class="text-danger d-block text-center mt-3">{!! session('error') !!}</small>

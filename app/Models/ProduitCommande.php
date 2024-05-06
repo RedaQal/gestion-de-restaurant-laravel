@@ -14,4 +14,9 @@ class ProduitCommande extends Model
         'id_produit',
         'quantite',
     ];
+
+    public function produit()
+    {
+        return $this->hasOne(Produit::class,'id', 'id_produit');
+    }
 }
