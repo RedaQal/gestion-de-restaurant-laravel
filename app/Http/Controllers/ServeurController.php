@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\Employe;
-use App\Models\Produit;
 use App\Models\Commande;
-use Illuminate\Http\Request;
 use App\Models\CommandeStatus;
-use App\Http\Middleware\Serveur;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 

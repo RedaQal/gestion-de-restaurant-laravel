@@ -1,4 +1,4 @@
-<x-agent.master title="Mes commandes">
+<x-agent.serveur.master title="Mes commandes">
     <div class="container">
         <h6 class="upcomming">Mes commandes</h6>
         <div class="table-responsive-md mt-3">
@@ -60,4 +60,4 @@
             </table>
         </div>
     </div>
-</x-agent.master>
+</x-agent.serveur.master>

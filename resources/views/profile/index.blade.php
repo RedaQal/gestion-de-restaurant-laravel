@@ -1,4 +1,4 @@
-<x-agent.master title="Profile">
+<x-agent.serveur.master title="Profile">
     <div class="container-xl px-4 ">
         {{-- Account page navigation --}}
         <nav class="nav nav-borders">
@@ -91,4 +91,4 @@
             </div>
         </div>
     </div>
-</x-agent.master>
+</x-agent.serveur.master>
