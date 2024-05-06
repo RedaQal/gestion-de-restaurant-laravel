@@ -17,7 +17,7 @@
             <div class="col-xl-4">
                 {{-- Profile picture card --}}
                 <div class="card mb-4 mb-xl-0">
-                    <div class="card-header">Image de profile</div>
+                    <div class="card-header" style="background-color: #0e2238;color:white;">Image de profile</div>
                     <div class="card-body text-center">
                         {{-- Profile picture image --}}
                         <img class="img-account-profile  mb-2 imageEmp" src="{{ asset('images/user.png') }}"
@@ -32,7 +32,7 @@
             {{-- Account details card --}}
             <div class="col-xl-6">
                 <div class="card">
-                    <div class="card-header">Compte details</div>
+                    <div class="card-header" style="background-color: #0e2238;color:white;">Compte details</div>
                     <div class="card-body">
                         <form method="post" action="{{ route('profile.update') }}" id="form">
                             @csrf
@@ -84,7 +84,7 @@
                                     {{ date_create($user->created_at)->format('d/m/Y') }}</span>
                             </div>
                             {{-- Save changes button --}}
-                            <button class="btn btn-primary mt-4" type="submit">Enregistrer</button>
+                            <button class="btn mt-4" style="background-color: #0e2238;color:white;" type="submit">Enregistrer</button>
                         </form>
                     </div>
                 </div>

@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Agent</title>
+    <title>{{ $title }}</title>
 </head>
 
 <body>
@@ -23,13 +23,15 @@
             <header>
                 <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i>
                 </a>
-                <a href="#"class="brand-logo"> <span>Serveur</span></a>
+                <a href="{{ route('serveur.index') }}"class="brand-logo"> <span>Serveur</span></a>
             </header>
             <nav class="dashboard-nav-list">
                 <a href="{{ route('serveur.index') }}"
                     class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'active' : '' }}"><i
                         class="fa-solid fa-clipboard-list"></i>Tous les commandes </a>
-                <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-list-check"></i> Mes commandes </a>
+                <a href="{{ route('serveur.myOrders') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.myOrders') ? 'active' : '' }}"><i
+                        class="fa-solid fa-list-check"></i> Mes commandes </a>
                 <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-cart-plus"></i>Passer
                     commande </a>
                 <a href="{{ route('profile.index') }}"

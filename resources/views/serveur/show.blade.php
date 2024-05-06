@@ -1,10 +1,10 @@
-<x-agent.master>
-    {{-- @dd($commande->produit_commandes[0]->produit->images); --}}
+<x-agent.master title="Commande details">
     <div class="container">
-        <a href="{{ route('serveur.index') }}" title="Retour à l'accueil" class="d-block mb-3">
+        <a href="{{ url()->previous() }}" title="Retour à l'accueil" class="d-block mb-3">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
-        <div class="shadow p-3 rounded text-center fw-bold mb-4" style="background-color: #0e2238;color:rgb(255, 255, 255);">
+        <div class="shadow p-3 rounded text-center fw-bold mb-4"
+            style="background-color: #0e2238;color:rgb(255, 255, 255);">
             <div class="row">
                 <div class="col-md-3  border-end">
                     <span>Commmande N° : {{ $commande->id }}</span>

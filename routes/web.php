@@ -64,10 +64,13 @@ Route::middleware(['auth', 'serveur'])->prefix("serveur")->name("serveur.")->gro
     //all commande
     Route::get('/', [ServeurController::class, "index"])->name("index");
     //show commande
-    Route::get('/{commande}/show',[ServeurController::class,'show'])->name('show');
+    Route::get('/{commande}/show', [ServeurController::class, 'show'])->name('show');
     //delete commande
-    Route::delete('/{commande}',[ServeurController::class,'destroy'])->name('destroy');
-
+    Route::delete('/{commande}', [ServeurController::class, 'destroy'])->name('destroy');
+    //valider commande
+    Route::post('/{commande}', [ServeurController::class, 'valider'])->name('valider');
+    //Serveur Orders
+    Route::get('/myOrders', [ServeurController::class, 'myOrders'])->name('myOrders');
 });
 
 Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group(function () {

@@ -343,7 +343,6 @@ h1,
     padding-left: 5px;
 }
 
-.menu-toggle:hover,
 .menu-toggle:active,
 .menu-toggle:focus {
     text-decoration: none;
@@ -410,10 +409,10 @@ h1,
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.card-image-commande{
-    height:25vh;
+.card-image-commande {
+    height: 25vh;
 }
-.card-image-commande img{
+.card-image-commande img {
     height: 100%;
     width: 100%;
     object-fit: cover;

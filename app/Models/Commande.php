@@ -18,9 +18,12 @@ class Commande extends Model
     {
         return $this->hasMany(ProduitCommande::class, 'id_commande', 'id');
     }
-
     public function client()
     {
         return $this->hasOne(Client::class, 'id', 'id_client');
+    }
+    public function commande_status()
+    {
+        return $this->hasOne(CommandeStatus::class, 'id_commande', 'id');
     }
 }

@@ -16,7 +16,7 @@
             @endif
             {{-- Change password card --}}
             <div class="card">
-                <div class="card-header">Modifier Mot de passe</div>
+                <div class="card-header " style="background-color: #0e2238;color:white;">Modifier Mot de passe</div>
                 <div class="card-body">
                     <form method="post" action="{{ route('profile.security.update') }}">
                         @csrf
@@ -49,7 +49,7 @@
                         @if (session()->has('error'))
                             <small class="text-danger d-block text-center mt-3">{!! session('error') !!}</small>
                         @endif
-                        <button class="btn btn-primary" type="submit">Enregistrer</button>
+                        <button class="btn" style="background-color: #0e2238;color:white;" type="submit">Enregistrer</button>
                     </form>
                 </div>
             </div>
