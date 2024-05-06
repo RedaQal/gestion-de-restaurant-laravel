@@ -3,7 +3,7 @@
         {{-- Account page navigation --}}
         <x-profileNav />
         <hr class="mt-0 mb-4">
-        <div class="col-lg-8 w-50 m-auto">
+        <div class="col-lg-8 m-auto">
             @if (session()->has('success'))
                 <x-alert type="success">
                     {!! session('success') !!}

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\Commande;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,5 +18,10 @@ class ServeurController extends Controller
             ->where("commande_statuses.status", "=", "en cours")
             ->get();
         return view('serveur.index', compact('commandes'));
+    }
+
+    public function destroy(Commande $commande){
+        Client::destroy($commande->id_client);
+        return to_route('serveur.index')->with('success','Commande supprime avec succes');
     }
 }
