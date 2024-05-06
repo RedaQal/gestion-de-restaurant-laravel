@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.master title="Liste des employes">
+<x-Admin.master title="Liste des employes">
     <div class="w-75 m-auto mt-5">
         @if (session()->has('success'))
             <x-alert>
@@ -65,4 +65,4 @@
             {{ $employes->links('pagination::bootstrap-4') }}
         </div>
     </div>
-</x-dashbordComponents.Admin.master>
+</x-Admin.master>

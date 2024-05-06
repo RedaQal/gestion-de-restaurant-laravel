@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.master title="Liste des plats">
+<x-Admin.master title="Liste des plats">
     @if (session()->has('success'))
         <x-alert>
             {!! session('success') !!}

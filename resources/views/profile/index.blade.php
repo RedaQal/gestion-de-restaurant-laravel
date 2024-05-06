@@ -1,13 +1,18 @@
-<x-Admin.master title="Profile">
-    <div class="container-xl px-4 mt-4">
+<x-agent.master title="Profile">
+    <div class="container-xl px-4 ">
         {{-- Account page navigation --}}
-        <x-profileNav />
+        <nav class="nav nav-borders">
+            <a class="nav-link text-decoration-none  {{ request()->routeIs('profile.index') ? 'active' : '' }} ms-0"
+                href="{{ route('profile.index') }}">Compte</a>
+            <a class="nav-link text-decoration-none  {{ request()->routeIs('profile.security') ? 'active' : '' }}"
+                href="{{ route('profile.security') }}">Sécurité</a>
+        </nav>
         @if (session()->has('success'))
             <x-alert type="success">
                 {!! session('success') !!}
             </x-alert>
         @endif
-        <hr class="mt-0 mb-4">
+        <hr class="mt-0">
         <div class="row">
             <div class="col-xl-4">
                 {{-- Profile picture card --}}
@@ -26,10 +31,10 @@
             </div>
             {{-- Account details card --}}
             <div class="col-xl-6">
-                <div class="card mb-4">
+                <div class="card">
                     <div class="card-header">Compte details</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('dashboard.profile.update') }}" id="form">
+                        <form method="post" action="{{ route('profile.update') }}" id="form">
                             @csrf
                             @method('PUT')
                             {{-- Form Group (username) --}}
@@ -52,8 +57,8 @@
                             {{-- Form Group (phone number) --}}
                             <div class="md-6">
                                 <label class="small mb-1" for="inputPhone">Numéro de Téléphone :</label>
-                                <input class="form-control {{ $errors->has('tel') ? 'is-invalid' : '' }}" name="tel"
-                                    id="inputPhone" type="tel" placeholder="Numéro de Téléphone "
+                                <input class="form-control {{ $errors->has('tel') ? 'is-invalid' : '' }}"
+                                    name="tel" id="inputPhone" type="tel" placeholder="Numéro de Téléphone "
                                     value="{{ old('tel', $user->tel) }}">
                                 @error('tel')
                                     <small class="text-danger">{{ $message }}</small>
@@ -86,4 +91,4 @@
             </div>
         </div>
     </div>
-</x-Admin.master>
+</x-agent.master>

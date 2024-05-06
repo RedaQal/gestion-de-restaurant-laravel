@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.master title="Modifier employe">
+<x-Admin.master title="Modifier employe">
     <div class="container my-3 w-50">
         <form action="{{ route('dashboard.employe.update', $employe->id) }}" method="POST"
             class="border p-5 shadow rounded">
@@ -43,4 +43,4 @@
             </div>
         </form>
     </div>
-</x-dashbordComponents.Admin.master>
+</x-Admin.master>

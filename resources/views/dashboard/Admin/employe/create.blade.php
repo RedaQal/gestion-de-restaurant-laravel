@@ -1,4 +1,4 @@
-<x-dashbordComponents.Admin.master title="Ajouter employe">
+<x-Admin.master title="Ajouter employe">
     <div class="container my-3 w-50">
         @if (session()->has('success'))
             <x-alert type="success">
@@ -74,4 +74,4 @@
             }
         });
     </script>
-</x-dashbordComponents.Admin.master>
+</x-Admin.master >

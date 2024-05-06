@@ -1,5 +1,4 @@
-<x-dashbordComponents.Admin.master title="Ajouter Plat">
-
+<x-Admin.master title="Ajouter Plat">
     <div class="container my-3 w-50">
         @if (session()->has('success'))
             <x-alert>
@@ -54,4 +53,4 @@
             </div>
         </form>
     </div>
-</x-dashbordComponents.Admin.master>
+</x-Admin.master>

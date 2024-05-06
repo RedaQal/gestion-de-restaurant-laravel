@@ -5,10 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServeurController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\AgentProfileController;
 
 Route::get('/', [HomeController::class, "index"])->name("index.index");
 
@@ -45,11 +46,11 @@ Route::middleware(['auth', 'admin'])->prefix("dashboard")->name("dashboard.")->g
     //update produit
     Route::put('/menu/{produit}', [MenuController::class, "update"])->name("menu.update");
     //show profile
-    Route::get('/profile', [ProfileController::class, "index"])->name("profile.index");
-    Route::put('/profile', [ProfileController::class, "updateProfile"])->name("profile.update");
-
-    Route::get('/profile/security', [ProfileController::class, "showSecurity"])->name("profile.security");
-    Route::put('/profile/security', [ProfileController::class, "updatePassword"])->name("profile.security.update");
+    Route::get('/profile', [AdminProfileController::class, "index"])->name("profile.index");
+    Route::put('/profile', [AdminProfileController::class, "updateProfile"])->name("profile.update");
+    //show profile security
+    Route::get('/profile/security', [AdminProfileController::class, "showSecurity"])->name("profile.security");
+    Route::put('/profile/security', [AdminProfileController::class, "updatePassword"])->name("profile.security.update");
 });
 
 
@@ -59,6 +60,15 @@ Route::prefix("commande")->name("commande.")->group(function () {
 });
 
 //Serveur Interface
-Route::middleware(['auth','serveur'])->prefix("serveur")->name("serveur.")->group(function () {
+Route::middleware(['auth', 'serveur'])->prefix("serveur")->name("serveur.")->group(function () {
     Route::get('/', [ServeurController::class, "index"])->name("index");
+});
+
+Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group(function () {
+    //show profile
+    Route::get('/', [AgentProfileController::class, "index"])->name("index");
+    Route::put('/', [AgentProfileController::class, "updateProfile"])->name("update");
+    //show profile security
+    Route::get('/security', [AgentProfileController::class, "showSecurity"])->name("security");
+    Route::put('/security', [AgentProfileController::class, "updatePassword"])->name("security.update");
 });

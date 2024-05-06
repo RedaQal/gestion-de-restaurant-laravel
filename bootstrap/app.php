@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'admin' => \App\Http\Middleware\Admin::class,
+            'agent' => \App\Http\Middleware\Agent::class,
             'serveur' => \App\Http\Middleware\Serveur::class,
             'multiLogin' => \App\Http\Middleware\MultiLogin::class,
         ]);

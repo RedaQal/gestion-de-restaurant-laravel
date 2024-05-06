@@ -6,5 +6,3 @@
         showCloseButton: true,
     });
 </script>
-
-
