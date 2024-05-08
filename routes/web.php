@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ServeurController;
 use App\Http\Controllers\CommandeController;
+use App\Http\Controllers\CuisinierController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AgentProfileController;
@@ -80,4 +81,9 @@ Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group
     //show profile security
     Route::get('/security', [AgentProfileController::class, "showSecurity"])->name("security");
     Route::put('/security', [AgentProfileController::class, "updatePassword"])->name("security.update");
+});
+
+Route::middleware('auth')->prefix("cuisinier")->name("cuisinier.")->group(function () {
+    //all commande
+    Route::get('/', [CuisinierController::class, "index"])->name("index");
 });

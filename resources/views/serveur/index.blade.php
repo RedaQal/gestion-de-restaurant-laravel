@@ -1,4 +1,4 @@
-<x-agent.serveur.master title="Tous les commandes">
+<x-agent.serveur.serveurMaster title="Tous les commandes">
     @if (session()->has('success'))
         <x-alert>
             {!! session('success') !!}
@@ -76,4 +76,4 @@
             </table>
         </div>
     </div>
-</x-agent.serveur.master>
+</x-agent.serveur.serveurMaster>

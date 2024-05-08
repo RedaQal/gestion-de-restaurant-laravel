@@ -24,9 +24,9 @@ class MultiLogin
                 if (Employe::find(Auth::user()->id)->serveur) {
                     return redirect()->route('serveur.index');
                 }
-                // if (Employe::find(Auth::user()->id)->cuisinier) {
-                //     return "cuisinier";
-                // }
+                if (Employe::find(Auth::user()->id)->cuisinier) {
+                    return redirect()->route('cuisinier.index');
+                }
                 // if (Employe::find(Auth::user()->id)->caissiere) {
                 //     return "caissier";
                 // }

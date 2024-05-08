@@ -27,7 +27,7 @@ class LoginController extends Controller
                     return redirect()->route('serveur.index');
                 }
                 if (Employe::find($user->id)->cuisinier) {
-                    return "cuisinier";
+                    return to_route('cuisinier.index');
                 }
                 if (Employe::find($user->id)->caissiere) {
                     return "caissier";

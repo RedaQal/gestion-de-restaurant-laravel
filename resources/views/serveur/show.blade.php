@@ -1,4 +1,4 @@
-<x-agent.serveur.master title="Commande details">
+<x-agent.serveur.serveurMaster title="Commande details">
     <div class="container">
         <a href="{{ url()->previous() }}" title="Retour à l'accueil" class="d-block mb-3 fs-5">
             <i class="fa-solid fa-arrow-left"></i>
@@ -13,7 +13,6 @@
             <p>Prix Total</p>
             <span class="ms-auto fw-bold" style="color: #e69500">{{ $commande->total }} MAD</span>
         </div>
-
         @foreach ($commande->produit_commandes as $produits)
             <div class="mb-5">
                 <div class="card-sl">
@@ -47,4 +46,4 @@
             </div>
         @endforeach
     </div>
-</x-agent.serveur.master>
+</x-agent.serveur.serveurMaster>

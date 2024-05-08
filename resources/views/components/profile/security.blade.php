@@ -1,5 +1,4 @@
-<x-agent.serveur.master title="Profile">
-    <div class="container-xl px-4">
+<div class="container-xl px-4">
         {{-- Account page navigation --}}
         <nav class="nav nav-borders">
             <a class="nav-link text-decoration-none  {{ request()->routeIs('profile.index') ? 'active' : '' }} ms-0"
@@ -55,4 +54,3 @@
             </div>
         </div>
     </div>
-</x-agent.serveur.master>

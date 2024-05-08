@@ -12,9 +12,27 @@ class AgentProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('profile.index', compact('user'));
+        if (Employe::find($user->id)->serveur) {
+            return view('profile.serveurIndex', compact('user'));
+        }
+        if (Employe::find($user->id)->cuisinier) {
+            return view('profile.cuisinierIndex', compact('user'));
+        }
+        // if (Employe::find($user->id)->caissiere) {
+        //     return "caissier";
+        // }
     }
 
+    public function showSecurity()
+    {
+        $user = Auth::user();
+        if (Employe::find($user->id)->serveur) {
+            return view('profile.serveurSecurity');
+        }
+        if (Employe::find($user->id)->cuisinier) {
+            return view('profile.cuisinierSecrurity');
+        }
+    }
     public function updateProfile(Request $request)
     {
         $formField = $request->validate(
@@ -30,10 +48,6 @@ class AgentProfileController extends Controller
         return back()->with('success', "Employe <strong> $user->name</strong> est modifié avec succes");
     }
 
-    public function showSecurity()
-    {
-        return view('profile.security');
-    }
 
     public function updatePassword(Request $request)
     {
