@@ -83,7 +83,8 @@ Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group
     Route::put('/security', [AgentProfileController::class, "updatePassword"])->name("security.update");
 });
 
-Route::middleware('auth')->prefix("cuisinier")->name("cuisinier.")->group(function () {
+//cuisinier interface
+Route::middleware(['auth','cuisinier'])->prefix("cuisinier")->name("cuisinier.")->group(function () {
     //all commande
     Route::get('/', [CuisinierController::class, "index"])->name("index");
 });

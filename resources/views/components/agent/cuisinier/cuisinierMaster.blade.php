@@ -26,8 +26,13 @@
                 <a href="{{ route('cuisinier.index') }}"class="brand-logo"><span>Cuisinier</span></a>
             </header>
             <nav class="dashboard-nav-list">
-                <a href="#" class="dashboard-nav-item "><i class="fa-solid fa-clipboard-list"></i>Tous les
+                <a href="{{ route('cuisinier.index') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.index') ? 'active' : '' }}"><i
+                        class="fa-solid
+                    fa-clipboard-list"></i>Tous les
                     commandes </a>
+                <a href="#" class="dashboard-nav-item "><i class="fa-regular fa-hourglass-half"></i> Commande
+                    en cours </a>
                 <div class='dashboard-nav-dropdown'><a href="#!"
                         class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-utensils"></i>
                         Menu </a>
@@ -36,7 +41,9 @@
                         <a href="#" class="dashboard-nav-dropdown-item">Ajouter plat</a>
                     </div>
                 </div>
-                <a href="{{ route('profile.index') }}" class="dashboard-nav-item "><i class="fas fa-user"></i>
+                <a href="{{ route('profile.index') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
+                        class="fas fa-user"></i>
                     Profile
                 </a>
                 <div class="nav-item-divider"></div>
