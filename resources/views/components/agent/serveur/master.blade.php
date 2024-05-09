@@ -23,28 +23,20 @@
             <header>
                 <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i>
                 </a>
-                <a href="{{ route('cuisinier.index') }}"class="brand-logo"><span>Cuisinier</span></a>
+                <a href="{{ route('serveur.index') }}"class="brand-logo"> <span>Serveur</span></a>
             </header>
             <nav class="dashboard-nav-list">
-                <a href="{{ route('cuisinier.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.index') ? 'active' : '' }}"><i
-                        class="fa-solid
-                    fa-clipboard-list"></i>Commandes</a>
-                <a href="#" class="dashboard-nav-item "><i class="fa-regular fa-hourglass-half"></i> Commande
-                    en cours </a>
-                <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-utensils"></i>
-                        Menu </a>
-                    <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#" class="dashboard-nav-dropdown-item">List plat</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">Ajouter plat</a>
-                    </div>
-                </div>
+                <a href="{{ route('serveur.index') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'active' : '' }}"><i
+                        class="fa-solid fa-clipboard-list"></i>Tous les commandes </a>
+                <a href="{{ route('serveur.myOrders') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.myOrders') ? 'active' : '' }}"><i
+                        class="fa-solid fa-list-check"></i> Mes commandes </a>
+                <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-cart-plus"></i>Passer
+                    commande </a>
                 <a href="{{ route('profile.index') }}"
                     class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
-                        class="fas fa-user"></i>
-                    Profile
-                </a>
+                        class="fas fa-user"></i> Profile </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('login.logout') }}" class="dashboard-nav-item "><i class="fas fa-sign-out-alt"></i>
                     Déconnexion </a>

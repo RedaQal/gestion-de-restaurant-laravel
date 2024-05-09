@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>{{ $title }}</title>
+    <title>Agent</title>
 </head>
 
 <body>
@@ -23,31 +23,20 @@
             <header>
                 <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i>
                 </a>
-                <a href="{{ route('cuisinier.index') }}"class="brand-logo"><span>Cuisinier</span></a>
+                <a href="#"class="brand-logo"> <span>Serveur</span></a>
             </header>
             <nav class="dashboard-nav-list">
-                <a href="{{ route('cuisinier.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.index') ? 'active' : '' }}"><i
-                        class="fa-solid
-                    fa-clipboard-list"></i>Commandes</a>
-                <a href="#" class="dashboard-nav-item "><i class="fa-regular fa-hourglass-half"></i> Commande
-                    en cours </a>
-                <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-utensils"></i>
-                        Menu </a>
-                    <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#" class="dashboard-nav-dropdown-item">List plat</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">Ajouter plat</a>
-                    </div>
-                </div>
+                <a href="{{ route('serveur.index') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'active' : '' }}"><i class="fa-solid fa-clipboard-list"></i>Tous les commandes </a>
+                <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-list-check"></i> Mes commandes </a>
+                <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-cart-plus"></i>Passer
+                    commande </a>
                 <a href="{{ route('profile.index') }}"
                     class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
-                        class="fas fa-user"></i>
-                    Profile
-                </a>
+                        class="fas fa-user"></i> Profile </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('login.logout') }}" class="dashboard-nav-item "><i class="fas fa-sign-out-alt"></i>
-                    Déconnexion </a>
+                    Logout </a>
             </nav>
         </div>
         <div class='dashboard-app'>
@@ -65,9 +54,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
     <script>
         const mobileScreen = window.matchMedia("(max-width: 990px )");
         $(document).ready(function() {

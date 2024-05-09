@@ -84,7 +84,8 @@ Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group
 });
 
 //cuisinier interface
-Route::middleware(['auth','cuisinier'])->prefix("cuisinier")->name("cuisinier.")->group(function () {
+Route::middleware(['auth', 'cuisinier'])->prefix("cuisinier")->name("cuisinier.")->group(function () {
     //all commande
     Route::get('/', [CuisinierController::class, "index"])->name("index");
+    Route::POST('/{commandeStatus}', [CuisinierController::class, "preparer"])->name("preparer");
 });
