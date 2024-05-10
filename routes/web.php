@@ -11,6 +11,7 @@ use App\Http\Controllers\CuisinierController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AgentProfileController;
+use App\Http\Controllers\CaissierController;
 
 Route::get('/', [HomeController::class, "index"])->name("index.index");
 
@@ -102,4 +103,8 @@ Route::middleware(['auth', 'cuisinier'])->prefix("cuisinier")->name("cuisinier."
     Route::put('/menu/modifierPlat/{produit}', [CuisinierController::class, 'modifierPlat'])->name('modifierPlat');
     //supprimer plats
     Route::delete('/menu/supprimerPlat/{produit}', [CuisinierController::class, 'supprimerPlat'])->name('supprimerPlat');
+});
+//caissier interface
+Route::middleware(['auth', 'caissier'])->prefix("caissier")->name("caissier.")->group(function () {
+    Route::get('/', [CaissierController::class, "index"])->name("index");
 });

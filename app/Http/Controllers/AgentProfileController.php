@@ -18,9 +18,9 @@ class AgentProfileController extends Controller
         if (Employe::find($user->id)->cuisinier) {
             return view('profile.cuisinierIndex', compact('user'));
         }
-        // if (Employe::find($user->id)->caissiere) {
-        //     return "caissier";
-        // }
+        if (Employe::find($user->id)->caissiere) {
+            return view('profile.caissierIndex', compact('user'));
+        }
     }
 
     public function showSecurity()
@@ -30,7 +30,10 @@ class AgentProfileController extends Controller
             return view('profile.serveurSecurity');
         }
         if (Employe::find($user->id)->cuisinier) {
-            return view('profile.cuisinierSecrurity');
+            return view('profile.cuisinierSecurity');
+        }
+        if (Employe::find($user->id)->caissiere) {
+            return view('profile.caissierSecurity');
         }
     }
     public function updateProfile(Request $request)

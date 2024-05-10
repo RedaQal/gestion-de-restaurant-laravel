@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'agent' => \App\Http\Middleware\Agent::class,
             'serveur' => \App\Http\Middleware\Serveur::class,
             'cuisinier' => \App\Http\Middleware\Cuisinier::class,
+            'caissier' => \App\Http\Middleware\Caissier::class,
             'multiLogin' => \App\Http\Middleware\MultiLogin::class,
         ]);
     })->withExceptions(function (Exceptions $exceptions) {

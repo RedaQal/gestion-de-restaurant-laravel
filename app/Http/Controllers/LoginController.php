@@ -30,7 +30,7 @@ class LoginController extends Controller
                     return to_route('cuisinier.index');
                 }
                 if (Employe::find($user->id)->caissiere) {
-                    return "caissier";
+                    return to_route('caissier.index');
                 }
             }
         } else {
