@@ -43,7 +43,7 @@
                                 <span class="badge bg-danger fw-bold">{{ $commande->status }} <i class="fa-solid fa-exclamation"></i></span>
                                 @endif
                             </td>
-                            <td class="d-flex justify-content-evenly">
+                            <td class="d-flex justify-content-center gap-2">
                                 <a href="{{ route('serveur.show', $commande->id_commande) }}"
                                     class="btn btn-secondary btn-just-icon btn-sm" title='Détails'>
                                     <i class="fa-solid fa-eye"></i>

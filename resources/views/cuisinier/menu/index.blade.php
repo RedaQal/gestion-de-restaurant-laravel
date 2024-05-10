@@ -8,7 +8,9 @@
         @foreach ($produits as $produit)
             <div class="product-card">
                 <div class="product-tumb">
+                    @if (count($produit->images))
                     <img src="{{ asset('storage/' . $produit->images[0]->url) }}" alt="">
+                    @endif
                 </div>
                 <div class="product-details">
                     <span class="product-catagory">{{ $produit->categorie->label }}</span>
@@ -46,7 +48,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="{{ route('dashboard.menu.destroy', $produit->id) }}" method="post">
+                            <form action="{{ route('cuisinier.supprimerPlat', $produit->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Supprimer</button>
@@ -66,7 +68,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{ route('dashboard.menu.update', $produit->id) }}" method="post">
+                            <form action="{{ route('cuisinier.modifierPlat', $produit->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="mb-3">

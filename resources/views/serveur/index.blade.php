@@ -61,7 +61,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>Etes-vous sur de vouloir supprimer cette commande ?</p>
-                                        <form method="POST" action="{{ route('serveur.destroy', $commande->id) }}">
+                                        <div class="float-end">
+                                            <form method="POST" action="{{ route('serveur.destroy', $commande->id) }}">
                                             @method('DELETE')
                                             @csrf
                                             <button class="btn btn-danger">
@@ -69,7 +70,10 @@
                                             </button>
                                         </form>
                                         <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Annuler</button>
+                                            data-bs-dismiss="modal">Annuler
+                                        </button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

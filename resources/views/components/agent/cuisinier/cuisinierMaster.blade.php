@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>{{ $title }}</title>
 </head>
@@ -33,11 +34,11 @@
                 <a href="{{ route('cuisinier.enCours') }}" class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.enCours') ? 'active' : '' }}"><i class="fa-regular fa-hourglass-half"></i> Commande
                     en cours </a>
                 <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-utensils"></i>
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle {{ Route::currentRouteNamed('cuisinier.listPlat') || Route::currentRouteNamed('cuisinier.ajouterPlat') ? 'active' : '' }}"><i class="fa-solid fa-utensils"></i>
                         Menu </a>
                     <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#" class="dashboard-nav-dropdown-item">List plat</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">Ajouter plat</a>
+                        <a href="{{ route('cuisinier.listPlat') }}" class="dashboard-nav-dropdown-item {{ Route::currentRouteNamed('cuisinier.listPlat') ? 'active' : '' }}">List plat</a>
+                        <a href="{{ route('cuisinier.ajouterPlat') }}" class="dashboard-nav-dropdown-item {{ Route::currentRouteNamed('cuisinier.ajouterPlat') ? 'active' : '' }}">Ajouter plat</a>
                     </div>
                 </div>
                 <a href="{{ route('profile.index') }}"

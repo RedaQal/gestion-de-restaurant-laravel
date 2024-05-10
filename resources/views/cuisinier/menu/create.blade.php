@@ -5,7 +5,7 @@
                 {!! session('success') !!}
             </x-alert>
         @endif
-        <form action="{{ route('dashboard.menu.store') }}" method="POST" class="border p-5 shadow rounded"
+        <form action="{{ route('cuisinier.enregisterPlat') }}" method="POST" class="border p-5 shadow rounded"
             enctype="multipart/form-data">
             @csrf
             @method('POST')

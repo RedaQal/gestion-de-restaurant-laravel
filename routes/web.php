@@ -89,8 +89,17 @@ Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group
 Route::middleware(['auth', 'cuisinier'])->prefix("cuisinier")->name("cuisinier.")->group(function () {
     //all commande
     Route::get('/', [CuisinierController::class, "index"])->name("index");
-    Route::POST('/{commandeStatus}', [CuisinierController::class, "preparer"])->name("preparer");
+    Route::post('/{commandeStatus}', [CuisinierController::class, "preparer"])->name("preparer");
     //Preparation Orders
     Route::get('/enCours', [CuisinierController::class, 'enCours'])->name('enCours');
     Route::post('/enCours/{commandeStatus}',[CuisinierController::class, 'aServir'])->name('aServir');
+    //list plats
+    Route::get('/menu/listPlat', [CuisinierController::class, 'listPlat'])->name('listPlat');
+    //ajouter plats
+    Route::get('/menu/ajouterPlat', [CuisinierController::class, 'ajouterPlat'])->name('ajouterPlat');
+    Route::post('/menu/ajouterPlat', [CuisinierController::class, 'enregisterPlat'])->name('enregisterPlat');
+    //modifier plats
+    Route::put('/menu/modifierPlat/{produit}', [CuisinierController::class, 'modifierPlat'])->name('modifierPlat');
+    //supprimer plats
+    Route::delete('/menu/supprimerPlat/{produit}', [CuisinierController::class, 'supprimerPlat'])->name('supprimerPlat');
 });
