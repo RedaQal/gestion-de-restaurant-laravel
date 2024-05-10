@@ -1,4 +1,9 @@
 <x-agent.serveur.serveurMaster title="Mes commandes">
+    @if (session()->has('success'))
+    <x-alert>
+        {!! session('success') !!}
+    </x-alert>
+    @endif
     <div class="container">
         <h6 class="upcomming">Mes commandes</h6>
         @if (count($commandes) == 0)
@@ -38,11 +43,18 @@
                                 <span class="badge bg-danger fw-bold">{{ $commande->status }} <i class="fa-solid fa-exclamation"></i></span>
                                 @endif
                             </td>
-                            <td class="d-flex justify-content-around">
+                            <td class="d-flex justify-content-evenly">
                                 <a href="{{ route('serveur.show', $commande->id_commande) }}"
                                     class="btn btn-secondary btn-just-icon btn-sm" title='Détails'>
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
+                                @if ($commande->status == 'a servir')
+                                <form action="{{ route('serveur.serve', $commande->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit"class="btn btn-primary btn-just-icon btn-sm" title='serve'>
+                                    <i class="fa-solid fa-check"></i>
+                                </form>
+                                @endif
                             </td>
                         </tr>
                         <div class="modal fade" id="commande{{ $commande->id }}" tabindex="-1"

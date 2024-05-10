@@ -62,16 +62,18 @@ Route::prefix("commande")->name("commande.")->group(function () {
 
 //Serveur Interface
 Route::middleware(['auth', 'serveur'])->prefix("serveur")->name("serveur.")->group(function () {
-    //all commande
+    //all Order
     Route::get('/', [ServeurController::class, "index"])->name("index");
-    //show commande
+    //show Order
     Route::get('/{commande}/show', [ServeurController::class, 'show'])->name('show');
-    //delete commande
+    //delete Order
     Route::delete('/{commande}', [ServeurController::class, 'destroy'])->name('destroy');
-    //valider commande
+    //valider Order
     Route::post('/{commande}', [ServeurController::class, 'valider'])->name('valider');
     //Serveur Orders
     Route::get('/myOrders', [ServeurController::class, 'myOrders'])->name('myOrders');
+    //Serve Order
+    Route::Post('/myOrders/{commandeStatus}', [ServeurController::class, 'serve'])->name('serve');
 });
 
 Route::middleware(['auth', 'agent'])->prefix("profile")->name("profile.")->group(function () {

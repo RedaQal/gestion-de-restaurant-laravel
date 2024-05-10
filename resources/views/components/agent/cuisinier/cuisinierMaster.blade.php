@@ -30,7 +30,7 @@
                     class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.index') ? 'active' : '' }}"><i
                         class="fa-solid
                     fa-clipboard-list"></i>Commandes</a>
-                <a href="{{ route('cuisinier.enCours') }}" class="dashboard-nav-item "><i class="fa-regular fa-hourglass-half"></i> Commande
+                <a href="{{ route('cuisinier.enCours') }}" class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.enCours') ? 'active' : '' }}"><i class="fa-regular fa-hourglass-half"></i> Commande
                     en cours </a>
                 <div class='dashboard-nav-dropdown'><a href="#!"
                         class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-utensils"></i>
