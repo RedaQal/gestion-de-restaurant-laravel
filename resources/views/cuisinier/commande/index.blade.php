@@ -5,6 +5,9 @@
         </x-alert>
     @endif
     <h6 class="upcomming">Commandes</h6>
+    @if (count($commandes) == 0)
+        <h6 class="text-center mt-5 border p-3">Aucune Commande</h6>
+    @endif
     @foreach ($commandes as $com)
         <div class="container mt-3 mx-auto">
             <div class="row">
@@ -16,7 +19,7 @@
                                 @csrf
                                 @method('POST')
                                 <button class="btn btn-success btn-just-icon" title='Validé'>
-                                    <i class="fa-solid fa-check"></i>
+                                    <i class="fa-solid fa-play"></i>
                                 </button>
                             </form>
                             <div class="content">

@@ -88,4 +88,7 @@ Route::middleware(['auth', 'cuisinier'])->prefix("cuisinier")->name("cuisinier."
     //all commande
     Route::get('/', [CuisinierController::class, "index"])->name("index");
     Route::POST('/{commandeStatus}', [CuisinierController::class, "preparer"])->name("preparer");
+    //Preparation Orders
+    Route::get('/enCours', [CuisinierController::class, 'enCours'])->name('enCours');
+    Route::post('/enCours/{commandeStatus}',[CuisinierController::class, 'aServir'])->name('aServir');
 });

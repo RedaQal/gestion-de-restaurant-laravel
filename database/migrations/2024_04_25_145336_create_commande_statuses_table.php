@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('commande_statuses', function (Blueprint $table) {
             $table->id();
 
-            $table->enum('status',['en cours','valide','payer'])->default('en cours');
+            $table->enum('status',['en cours','valide','preparer','a servir','payer'])->default('en cours');
 
             $table->foreignId('id_commande')->constrained(
                 table :'commandes',
