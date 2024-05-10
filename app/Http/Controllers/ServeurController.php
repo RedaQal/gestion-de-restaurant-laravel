@@ -47,6 +47,7 @@ class ServeurController extends Controller
         ->get();
         return view('serveur.myOrders', compact('commandes'));
     }
+    
     public function serve(CommandeStatus $commandeStatus){
         $commandeStatus->update([
             'status' => 'payer',

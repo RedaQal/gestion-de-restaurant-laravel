@@ -36,6 +36,7 @@ class AgentProfileController extends Controller
             return view('profile.caissierSecurity');
         }
     }
+
     public function updateProfile(Request $request)
     {
         $formField = $request->validate(
@@ -50,7 +51,6 @@ class AgentProfileController extends Controller
         $user->save();
         return back()->with('success', "Employe <strong> $user->name</strong> est modifié avec succes");
     }
-
 
     public function updatePassword(Request $request)
     {

@@ -45,7 +45,6 @@ class MenuController extends Controller
         return back()->with('success', "Produit <strong> $request->label</strong> ajouter avec succes");
     }
 
-
     public function storeImg(ProduitsRequest $request, int $id)
     {
         if ($request->hasFile('image')) {

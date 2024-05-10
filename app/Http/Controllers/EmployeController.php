@@ -15,7 +15,7 @@ class EmployeController extends Controller
 {
     public function index()
     {
-        $employes = Employe::where('id', "!=", Auth::user()->id)->paginate(8);
+        $employes = Employe::where('id', "!=", Auth::user()->id)->get();
         return view('dashboard.Admin.employe.index', compact('employes'));
     }
 

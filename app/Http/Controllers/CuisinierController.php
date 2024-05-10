@@ -29,12 +29,14 @@ class CuisinierController extends Controller
         ]);
         return to_route('cuisinier.index')->with('success', 'Commande est en cours de preparation');
     }
+
     public function enCours()
     {
         $cuisinier = Employe::find(Auth::user()->id)->cuisinier;
         $commandes = CommandeStatus::where('status', '=', 'preparer')->where('id_cuisinier', '=', $cuisinier->id)->orderby('updated_at', 'asc')->get();
         return view('cuisinier.commande.enCours', compact('commandes'));
     }
+
     public function aServir(CommandeStatus $commandeStatus)
     {
         $cuisinier = Employe::find(Auth::user()->id)->cuisinier;
@@ -44,6 +46,7 @@ class CuisinierController extends Controller
         ]);
         return to_route('cuisinier.enCours')->with('success', 'Le serveur est bien notifié');
     }
+
     public function listPlat()
     {
         $produits = Produit::paginate(12);
@@ -55,6 +58,7 @@ class CuisinierController extends Controller
         $categories = Categorie::all();
         return view('cuisinier.menu.create', compact('categories'));
     }
+
     public function modifierPlat(Request $request, Produit $produit)
     {
         $produit->update(["prix" => $request->input('prix')]);
@@ -77,7 +81,6 @@ class CuisinierController extends Controller
         $this->storeImg($request, $produit->id);
         return back()->with('success', "Produit <strong> $request->label</strong> ajouter avec succes");
     }
-
 
     public function storeImg(ProduitsRequest $request, int $id)
     {
