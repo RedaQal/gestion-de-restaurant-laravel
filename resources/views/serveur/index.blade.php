@@ -6,6 +6,9 @@
     @endif
     <div class="container">
         <h6 class="upcomming">Tous les commandes</h6>
+        @if (count($commandes) == 0)
+            <h6 class="text-center mt-5 border p-3">Aucune Commande</h6>
+        @else
         <div class="table-responsive-md mt-3">
             <table class="table table-bordered table-hover text-center">
                 <thead>
@@ -20,15 +23,15 @@
                 <tbody>
                     @foreach ($commandes as $commande)
                         <tr>
-                            <td>{{ $commande->table_num }}</td>
+                            <td>{{ $commande->commande->client->table_num }}</td>
                             <td>
-                                @if (!$commande->name)
+                                @if (!$commande->commande->client->name)
                                     Anonyme
                                 @else
-                                    {{ $commande->name }}
+                                    {{$commande->commande->client->name }}
                                 @endif
                             </td>
-                            <td>{{ $commande->total }}</td>
+                            <td>{{ $commande->commande->total }}</td>
                             <td><span class="badge bg-warning text-dark fw-bold">{{ $commande->status }}</span></td>
                             <td class="d-flex justify-content-evenly">
                                 <a href="{{ route('serveur.show', $commande->id_commande) }}"
@@ -75,5 +78,6 @@
                 </tbody>
             </table>
         </div>
+        @endif
     </div>
 </x-agent.serveur.serveurMaster>

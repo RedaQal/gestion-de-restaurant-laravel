@@ -1,6 +1,9 @@
 <x-agent.serveur.serveurMaster title="Mes commandes">
     <div class="container">
         <h6 class="upcomming">Mes commandes</h6>
+        @if (count($commandes) == 0)
+            <h6 class="text-center mt-5 border p-3">Aucune Commande</h6>
+        @else
         <div class="table-responsive-md mt-3">
             <table class="table table-bordered table-hover text-center">
                 <thead>
@@ -15,16 +18,26 @@
                 <tbody>
                     @foreach ($commandes as $commande)
                         <tr>
-                            <td>{{ $commande->table_num }}</td>
+                            <td>{{ $commande->commande->client->table_num }}</td>
                             <td>
-                                @if (!$commande->name)
+                                @if (!$commande->commande->client->name)
                                     Anonyme
                                 @else
-                                    {{ $commande->name }}
+                                    {{ $commande->commande->client->name }}
                                 @endif
                             </td>
-                            <td>{{ $commande->total }}</td>
-                            <td><span class="badge bg-success fw-bold">{{ $commande->status }}</span></td>
+                            <td>{{ $commande->commande->total }}</td>
+                            <td>
+                                @if ($commande->status == 'valide')
+                                <span class="badge bg-success fw-bold">{{ $commande->status }}</span>
+                                @endif
+                                @if ($commande->status == 'preparer')
+                                <span class="badge bg-secondary fw-bold">{{ $commande->status }}</span>
+                                @endif
+                                @if ($commande->status == 'a servir')
+                                <span class="badge bg-danger fw-bold">{{ $commande->status }} <i class="fa-solid fa-exclamation"></i></span>
+                                @endif
+                            </td>
                             <td class="d-flex justify-content-around">
                                 <a href="{{ route('serveur.show', $commande->id_commande) }}"
                                     class="btn btn-secondary btn-just-icon btn-sm" title='Détails'>
@@ -59,5 +72,6 @@
                 </tbody>
             </table>
         </div>
+        @endif
     </div>
 </x-agent.serveur.serveurMaster>

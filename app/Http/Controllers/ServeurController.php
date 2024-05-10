@@ -13,11 +13,7 @@ class ServeurController extends Controller
 {
     public function index()
     {
-        $commandes = DB::table("clients")
-            ->join("commandes", "clients.id", "=", "commandes.id_client")
-            ->join("commande_statuses", 'commandes.id', "=", "commande_statuses.id_commande")
-            ->where("commande_statuses.status", "=", "en cours")
-            ->get();
+        $commandes = CommandeStatus::where('status', '=', 'en cours')->get();
         return view('serveur.index', compact('commandes'));
     }
 
@@ -45,18 +41,10 @@ class ServeurController extends Controller
 
     public function myOrders()
     {
-        $commandes = DB::table("clients")
-            ->join("commandes", "clients.id", "=", "commandes.id_client")
-            ->join("commande_statuses", 'commandes.id', "=", "commande_statuses.id_commande")
-            ->where(
-                "commande_statuses.status",
-                "=",
-                "valide",
-                "and",
-                "commandes.id_serveur",
-                "=",
-                Employe::find(Auth::user()->id)->serveur->id
-            )->get();
+        $serveur = Employe::find(Auth::user()->id)->serveur;
+        $commandes = CommandeStatus::where('id_serveur', '=', $serveur->id)
+        ->whereIn('status', ['valide','preparer','a servir'])
+        ->get();
         return view('serveur.myOrders', compact('commandes'));
     }
 }
