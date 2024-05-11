@@ -15,6 +15,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.jqueryui.css">
     <title>{{ $title }}</title>
 </head>
 
@@ -28,8 +31,8 @@
             </header>
             <nav class="dashboard-nav-list">
                 <a href="{{ route('caissier.index') }}"
-                    class="dashboard-nav-item">
-                  <i class="fa-solid fa-clipboard-list"></i>valider payement
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.index') ? 'active' : '' }}">
+                    <i class="fa-solid fa-clipboard-list"></i>valider payement
                 </a>
                 <a href="#" class="dashboard-nav-item">
                     <i class="fa-regular fa-hourglass-half"></i> historique</a>
@@ -61,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script>
         const mobileScreen = window.matchMedia("(max-width: 990px )");
         $(document).ready(function() {
