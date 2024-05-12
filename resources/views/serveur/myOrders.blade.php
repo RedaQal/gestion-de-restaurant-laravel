@@ -37,7 +37,7 @@
                                 <span class="badge bg-success fw-bold">{{ $commande->status }}</span>
                                 @endif
                                 @if ($commande->status == 'preparer')
-                                <span class="badge bg-secondary fw-bold">{{ $commande->status }}</span>
+                                <span class="badge bg-secondary fw-bold">{{ $commande->status }} ...</span>
                                 @endif
                                 @if ($commande->status == 'a servir')
                                 <span class="badge bg-danger fw-bold">{{ $commande->status }} <i class="fa-solid fa-exclamation"></i></span>

@@ -15,6 +15,7 @@
                             <th>Table</th>
                             <th>Commande N</th>
                             <th>Total prix (MAD)</th>
+                            <th>Date</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -24,13 +25,12 @@
                                 <td>{{ $commande->commande->client->table_num }}</td>
                                 <td>{{ $commande->commande->id }}</td>
                                 <td>{{ $commande->commande->total }}</td>
+                                <td>{{ $commande->created_at->format("d/m/Y H:i") }}</td>
                                 <td class="text-center">
-                                    <form action="{{ route('caissier.payer', $commande->commande->id) }}" method="post">
-                                        @csrf
-                                        @method('PUT')
-                                        <button class="btn btn-success btn-sm" title="Facturer"><i
-                                                class="fa-solid fa-check"></i></button>
-                                    </form>
+                                    <a href="{{ route('caissier.show', $commande->commande->id) }}"
+                                        class="btn btn-primary btn-sm" title="Facturer">
+                                        <i class="fa-solid fa-receipt"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
@@ -39,7 +39,6 @@
             </div>
         @endif
     </div>
-
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

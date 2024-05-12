@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/agentDashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/facture.css') }}">
     <link rel="icon" href="{{ asset('images/Gustaria.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -24,7 +25,7 @@
 <body>
     <div class='dashboard'>
         <div class="dashboard-nav">
-            <header>
+            <header class="">
                 <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i>
                 </a>
                 <a href="{{ route('caissier.index') }}"class="brand-logo"><span>Caissier</span></a>
@@ -34,7 +35,8 @@
                     class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.index') ? 'active' : '' }}">
                     <i class="fa-solid fa-clipboard-list"></i>valider payement
                 </a>
-                <a href="#" class="dashboard-nav-item">
+                <a href="{{ route('caissier.history') }}"
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.history') ? 'active' : '' }}">
                     <i class="fa-regular fa-hourglass-half"></i> historique</a>
                 <a href="{{ route('profile.index') }}"
                     class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
@@ -46,15 +48,13 @@
                     Déconnexion </a>
             </nav>
         </div>
-        <div class='dashboard-app'>
-            <header class='dashboard-toolbar d-flex justify-content-between'>
+        <div class='dashboard-app '>
+            <header class='dashboard-toolbar d-flex justify-content-between d-print-none'>
                 <a href="#" class="menu-toggle text-decoration-none "><i class="fa-solid fa-bars"></i></a>
                 <div class="fw-bold text-uppercase me-5">{{ Auth::user()->name }}</div>
             </header>
             <div class='dashboard-content'>
-                <div class=''>
-                    {{ $slot }}
-                </div>
+                {{ $slot }}
             </div>
         </div>
     </div>

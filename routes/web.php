@@ -6,12 +6,12 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ServeurController;
+use App\Http\Controllers\CaissierController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\CuisinierController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AgentProfileController;
-use App\Http\Controllers\CaissierController;
 
 Route::get('/', [HomeController::class, "index"])->name("index.index");
 
@@ -107,4 +107,7 @@ Route::middleware(['auth', 'cuisinier'])->prefix("cuisinier")->name("cuisinier."
 //caissier interface
 Route::middleware(['auth', 'caissier'])->prefix("caissier")->name("caissier.")->group(function () {
     Route::get('/', [CaissierController::class, "index"])->name("index");
+    Route::put('/{commandeStatus}', [CaissierController::class, "payer"])->name("payer");
+    Route::get('/facture/{commandeStatus}', [CaissierController::class, "show"])->name("show");
+    Route::get('/historique', [CaissierController::class, "history"])->name("history");
 });

@@ -20,6 +20,7 @@ class CommandeStatus extends Model
     {
         return $this->hasOne(Commande::class, 'id', 'id_commande');
     }
+
     public function serveur()
     {
         return $this->hasOne(Serveur::class, 'id', 'id_serveur');
