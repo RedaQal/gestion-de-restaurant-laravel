@@ -33,7 +33,6 @@ body {
     line-height: 1.5;
     color: #515151;
     text-align: left;
-    background-color: #e9edf4;
 }
 
 h1,
@@ -234,7 +233,7 @@ h1,
     background: rgba(255, 255, 255, 0.342);
 }
 
-.active {
+.activee {
     background: rgba(0, 0, 0, 0.418);
 }
 

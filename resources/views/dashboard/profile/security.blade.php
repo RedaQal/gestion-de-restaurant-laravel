@@ -1,17 +1,17 @@
 <x-Admin.master title="Profile">
-    <div class="container-xl px-4 mt-4">
+<div class="container-xl px-4">
         {{-- Account page navigation --}}
-        <x-profileNav />
+        <x-profileNav/>
         <hr class="mt-0 mb-4">
         <div class="col-lg-8 m-auto">
             @if (session()->has('success'))
-                <x-alert type="success">
+                <x-alert>
                     {!! session('success') !!}
                 </x-alert>
             @endif
             {{-- Change password card --}}
-            <div class="card mb-4">
-                <div class="card-header">Modifier Mot de passe</div>
+            <div class="card">
+                <div class="card-header " style="background-color: #0e2238;color:white;">Modifier Mot de passe</div>
                 <div class="card-body">
                     <form method="post" action="{{ route('dashboard.profile.security.update') }}">
                         @csrf
@@ -44,11 +44,11 @@
                         @if (session()->has('error'))
                             <small class="text-danger d-block text-center mt-3">{!! session('error') !!}</small>
                         @endif
-                        <button class="btn btn-primary" type="submit">Enregistrer</button>
+                        <button class="btn" style="background-color: #0e2238;color:white;" type="submit">Enregistrer</button>
                     </form>
                 </div>
             </div>
-            {{-- Security preferences card --}}
         </div>
     </div>
+
 </x-Admin.master>

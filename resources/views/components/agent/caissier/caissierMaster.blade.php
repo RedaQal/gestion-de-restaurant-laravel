@@ -32,14 +32,14 @@
             </header>
             <nav class="dashboard-nav-list">
                 <a href="{{ route('caissier.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.index') ? 'active' : '' }}">
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.index') ? 'activee' : '' }}">
                     <i class="fa-solid fa-clipboard-list"></i>valider payement
                 </a>
                 <a href="{{ route('caissier.history') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.history') ? 'active' : '' }}">
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('caissier.history') ? 'activee' : '' }}">
                     <i class="fa-regular fa-hourglass-half"></i> historique</a>
                 <a href="{{ route('profile.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'activee' : '' }}"><i
                         class="fas fa-user"></i>
                     Profile
                 </a>

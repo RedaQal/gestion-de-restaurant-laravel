@@ -27,15 +27,15 @@
             </header>
             <nav class="dashboard-nav-list">
                 <a href="{{ route('serveur.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'active' : '' }}"><i
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.index') ? 'activee' : '' }}"><i
                         class="fa-solid fa-clipboard-list"></i>Tous les commandes </a>
                 <a href="{{ route('serveur.myOrders') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.myOrders') ? 'active' : '' }}"><i
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.myOrders') ? 'activee' : '' }}"><i
                         class="fa-solid fa-list-check"></i> Mes commandes </a>
                 <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-cart-plus"></i>Passer
                     commande </a>
                 <a href="{{ route('profile.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'activee' : '' }}"><i
                         class="fas fa-user"></i> Profile </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('login.logout') }}" class="dashboard-nav-item "><i class="fas fa-sign-out-alt"></i>

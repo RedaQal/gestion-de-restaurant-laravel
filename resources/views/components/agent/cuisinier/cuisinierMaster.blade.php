@@ -28,21 +28,21 @@
             </header>
             <nav class="dashboard-nav-list">
                 <a href="{{ route('cuisinier.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.index') ? 'active' : '' }}"><i
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.index') ? 'activee' : '' }}"><i
                         class="fa-solid
                     fa-clipboard-list"></i>Commandes</a>
-                <a href="{{ route('cuisinier.enCours') }}" class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.enCours') ? 'active' : '' }}"><i class="fa-regular fa-hourglass-half"></i> Commande
+                <a href="{{ route('cuisinier.enCours') }}" class="dashboard-nav-item {{ Route::currentRouteNamed('cuisinier.enCours') ? 'activee' : '' }}"><i class="fa-regular fa-hourglass-half"></i> Commande
                     en cours </a>
                 <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle {{ Route::currentRouteNamed('cuisinier.listPlat') || Route::currentRouteNamed('cuisinier.ajouterPlat') ? 'active' : '' }}"><i class="fa-solid fa-utensils"></i>
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle {{ Route::currentRouteNamed('cuisinier.listPlat') || Route::currentRouteNamed('cuisinier.ajouterPlat') ? 'activee' : '' }}"><i class="fa-solid fa-utensils"></i>
                         Menu </a>
                     <div class='dashboard-nav-dropdown-menu'>
-                        <a href="{{ route('cuisinier.listPlat') }}" class="dashboard-nav-dropdown-item {{ Route::currentRouteNamed('cuisinier.listPlat') ? 'active' : '' }}">List plat</a>
-                        <a href="{{ route('cuisinier.ajouterPlat') }}" class="dashboard-nav-dropdown-item {{ Route::currentRouteNamed('cuisinier.ajouterPlat') ? 'active' : '' }}">Ajouter plat</a>
+                        <a href="{{ route('cuisinier.listPlat') }}" class="dashboard-nav-dropdown-item {{ Route::currentRouteNamed('cuisinier.listPlat') ? 'activee' : '' }}">List plat</a>
+                        <a href="{{ route('cuisinier.ajouterPlat') }}" class="dashboard-nav-dropdown-item {{ Route::currentRouteNamed('cuisinier.ajouterPlat') ? 'activee' : '' }}">Ajouter plat</a>
                     </div>
                 </div>
                 <a href="{{ route('profile.index') }}"
-                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'active' : '' }}"><i
+                    class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'activee' : '' }}"><i
                         class="fas fa-user"></i>
                     Profile
                 </a>
