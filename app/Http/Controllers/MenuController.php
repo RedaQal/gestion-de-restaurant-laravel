@@ -24,8 +24,8 @@ class MenuController extends Controller
 
     public function update(Request $request, Produit $produit)
     {
-        $produit->update(["prix" => $request->input('prix')]);
-        return to_route('dashboard.menu.index')->with('success', "Produit <strong> $produit->label</strong> est modifié avec succes");
+        $produit->update(["prix" => $request->input('prix'), "label" => $request->input('label')]);
+        return to_route('dashboard.menu.index')->with('success', "Produit <strong>" . $request->input('label') . "</strong> est modifié avec succes");
     }
 
     public function destroy(Produit $produit)

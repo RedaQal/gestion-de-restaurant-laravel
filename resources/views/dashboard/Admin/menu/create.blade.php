@@ -1,4 +1,6 @@
 <x-Admin.master title="Ajouter Plat">
+<h6 class="upcomming">Ajouter des Plats</h6>
+
     <div class="container my-3 w-50">
         @if (session()->has('success'))
             <x-alert>

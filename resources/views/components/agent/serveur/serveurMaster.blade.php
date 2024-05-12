@@ -32,8 +32,6 @@
                 <a href="{{ route('serveur.myOrders') }}"
                     class="dashboard-nav-item {{ Route::currentRouteNamed('serveur.myOrders') ? 'activee' : '' }}"><i
                         class="fa-solid fa-list-check"></i> Mes commandes </a>
-                <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-cart-plus"></i>Passer
-                    commande </a>
                 <a href="{{ route('profile.index') }}"
                     class="dashboard-nav-item {{ Route::currentRouteNamed('profile.index') || Route::currentRouteNamed('profile.security') ? 'activee' : '' }}"><i
                         class="fas fa-user"></i> Profile </a>

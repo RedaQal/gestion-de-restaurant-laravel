@@ -1,4 +1,5 @@
 <x-Admin.master title="Liste des employes">
+    <h6 class="upcomming">Liste des Employes</h6>
     <div class="w-75 m-auto mt-5">
         @if (session()->has('success'))
             <x-alert>
