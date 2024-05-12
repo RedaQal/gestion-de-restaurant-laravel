@@ -45,7 +45,7 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image :</label>
-                <input type="file" name="image[]" id="image" class="form-control" multiple>
+                <x-fileUploader />
             </div>
             <div class="d-flex justify-content-space-evenly w-75 mx-auto">
                 <button type="submit" class="btn btn-outline-primary w-25 d-block mx-auto">Ajouter</button>

@@ -8,7 +8,9 @@
         @foreach ($produits as $produit)
             <div class="product-card">
                 <div class="product-tumb">
-                    <img src="{{ asset('storage/' . $produit->images[0]->url) }}" alt="">
+                    @if (count($produit->images))
+                        <img src="{{ asset('storage/' . $produit->images[0]->url) }}" alt="">
+                    @endif
                 </div>
                 <div class="product-details">
                     <span class="product-catagory">{{ $produit->categorie->label }}</span>
