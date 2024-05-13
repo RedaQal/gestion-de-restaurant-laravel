@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employe;
+use App\Models\Produit;
+use App\Models\Commande;
+use App\Models\Categorie;
+use App\Models\ProduitImg;
+use Illuminate\Http\Request;
 use App\Models\CommandeStatus;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Categorie;
-use App\Models\Produit;
-use App\Models\ProduitImg;
-use App\Models\Commande;
-use Illuminate\Http\Request;
 use App\Http\Requests\ProduitsRequest;
 
 class CuisinierController extends Controller
