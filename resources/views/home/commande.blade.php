@@ -44,7 +44,7 @@
             <div class="categories">
                 @foreach ($categories as $category)
                     <a class="categorie" href="#{{ $category->label }}">
-                        <img src="" alt="plat" />
+                        <img src="{{ asset($category->img->url) }}" alt="plat" />
                         <p>{{ Str::ucfirst($category->label) }}</p>
                     </a>
                 @endforeach
@@ -56,7 +56,7 @@
             <div class="food">
                 @foreach ($categories as $categorie)
                     <h1 id="{{ $categorie->label }}">{{ Str::ucfirst($categorie->label) }}
-                        ({{ count($produits->where('id_categorie', $categorie->id)) }})</h1>
+                       </h1>
                     <div class="categoriesFood">
                         @if (!count($produits->where('id_categorie', $categorie->id)))
                             <p class="aucunProduit"><i class="fa-solid fa-circle-exclamation"></i> Aucun produit pour

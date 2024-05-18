@@ -21,7 +21,7 @@ div.menuCo {
 
 div.containerCo div.header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 8px 0;
 }
@@ -53,7 +53,7 @@ div.containerCo div.header div.search input:focus {
 
 div.containerCo div.header div.search i {
     position: absolute;
-    top: 15px;
+    top: 18px;
     left: 15px;
 }
 

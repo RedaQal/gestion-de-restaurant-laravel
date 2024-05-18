@@ -18,7 +18,7 @@ class CommandeController extends Controller
         $categories = Categorie::all();
         return view('home.commande', compact('produits', 'categories'));
     }
-    
+
     public function store(Request $request)
     {
         $data = $request->json()->all();

@@ -13,14 +13,15 @@ class CategorieSeeder extends Seeder
      */
     public function run(): void
     {
+
         DB::table(
             'categories'
         )->insert(
             [
-                'label' => 'deserts',
+                'label' => 'Deserts',
+                'img_id' => 5,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
             ],
         );
         DB::table(
@@ -28,10 +29,10 @@ class CategorieSeeder extends Seeder
         )->insert(
 
             [
-                'label' => 'plats',
+                'label' => 'Pizza',
+                'img_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
             ],
 
         );
@@ -40,9 +41,9 @@ class CategorieSeeder extends Seeder
         )->insert(
             [
                 'label' => 'boissons',
+                'img_id' => 7,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
             ],
         );
         DB::table(
@@ -50,9 +51,9 @@ class CategorieSeeder extends Seeder
         )->insert(
             [
                 'label' => 'salads',
+                'img_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
             ],
         );
         DB::table(
@@ -60,19 +61,19 @@ class CategorieSeeder extends Seeder
         )->insert(
             [
                 'label' => 'soups',
+                'img_id' => 6,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
             ],
         );
         DB::table(
             'categories'
         )->insert(
             [
-                'label' => 'sandwiches',
+                'label' => 'Tacos',
+                'img_id' => 4,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
             ]
         );
     }
