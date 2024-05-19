@@ -51,7 +51,7 @@ class EmployeController extends Controller
                     break;
             }
         }
-        $message = 'Employe <strong>'  . $request->name . '</strong> ajoute avec succes <br> Email : <strong>' . $request->email . '</strong> <br> Mot de passe : ' . '<strong>' . $password . '</strong>';
+        $message = 'Employe ajoute avec succes <br> Email : <strong>' . $request->email . '</strong> <br> Mot de passe : ' . '<strong>' . $password . '</strong>';
         return to_route('dashboard.employe.create')->with('success', $message);
     }
 

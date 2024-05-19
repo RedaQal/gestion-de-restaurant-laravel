@@ -528,6 +528,9 @@ a:focus {
     .dashboard-content {
         padding: 15px 0px;
     }
+    .tablet {
+        width: 80% !important;
+    }
 }
 
 @media (max-width: 992px) {

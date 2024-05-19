@@ -23,8 +23,13 @@
                     <img src="{{ asset('images/Gustaria.png') }}" alt="logo" />
                 </div>
                 <div class="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" name="search" placeholder="Rechercher un plat" />
+                    <form action="{{ route('commande.index') }}" method="get">
+                        <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        @csrf
+                        @method('get')
+                        <input type="text" name="search" placeholder="Rechercher un plat"
+                            value="{{ $search }}" />
+                    </form>
                 </div>
                 <div class="info">
                     <i class="fa-solid fa-location-dot"></i>
@@ -54,22 +59,27 @@
                 <p class="m-0">Nous proposons les meilleurs types de nourriture .</p>
             </div>
             <div class="food">
-                @foreach ($categories as $categorie)
-                    <h1 id="{{ $categorie->label }}">{{ Str::ucfirst($categorie->label) }}
-                       </h1>
-                    <div class="categoriesFood">
-                        @if (!count($produits->where('id_categorie', $categorie->id)))
-                            <p class="aucunProduit"><i class="fa-solid fa-circle-exclamation"></i> Aucun produit pour
-                                cette categorie pour l'instant</p>
-                        @else
-                            @foreach ($produits as $produit)
-                                @if ($produit->id_categorie === $categorie->id)
-                                    <x-commandeCard :produit="$produit" />
-                                @endif
-                            @endforeach
-                        @endif
-                    </div>
-                @endforeach
+                @if (count($produits) == 0)
+                    <h6 class="text-center mt-5 border p-3">Aucun Produit</h6>
+                @else
+                    @foreach ($categories_search as $categorie)
+                        <h1 id="{{ $categorie->label }}">{{ Str::ucfirst($categorie->label) }}
+                        </h1>
+                        <div class="categoriesFood">
+                            @if (!count($produits->where('id_categorie', $categorie->id)))
+                                <p class="aucunProduit"><i class="fa-solid fa-circle-exclamation"></i> Aucun produit
+                                    pour
+                                    cette categorie pour l'instant</p>
+                            @else
+                                @foreach ($produits as $produit)
+                                    @if ($produit->id_categorie === $categorie->id)
+                                        <x-commandeCard :produit="$produit" />
+                                    @endif
+                                @endforeach
+                            @endif
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
 
@@ -267,6 +277,12 @@
                     localStorage.clear();
                     renderListCommande();
                     $('#client').modal('hide');
+                    Swal.fire({
+                        icon: "success",
+                        title: "Votre commande est passé avec succés",
+                        showConfirmButton: false,
+                        showCloseButton: true,
+                    });
                 });
             } else {
                 n_table.classList.add('is-invalid')

@@ -12,11 +12,19 @@ use App\Models\ProduitCommande;
 
 class CommandeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $produits = Produit::all();
         $categories = Categorie::all();
-        return view('home.commande', compact('produits', 'categories'));
+        $categories_search = Categorie::all();
+        $search = $request->query()['search'] ?? "";
+        if (count($request->query()) && isset($search)) {
+            $produits = Produit::where('label', "like", "%" . $request->input('search') . "%")->get();
+            $categories_search = Categorie::whereIn("id", array_map(fn ($el) => $el["id_categorie"], $produits->toArray()))->get();
+        } else {
+            $produits = Produit::all();
+        }
+        // dd($categories_search, $produits);
+        return view('home.commande', compact('produits', 'categories', "categories_search", "search"));
     }
 
     public function store(Request $request)
@@ -40,7 +48,7 @@ class CommandeController extends Controller
                 'id_commande' => $commande->id,
                 'status' => 'en cours',
             ]
-            );
+        );
         foreach ($data['products'] as $produit) {
             ProduitCommande::create(
                 [

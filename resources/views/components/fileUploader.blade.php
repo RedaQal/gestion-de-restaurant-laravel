@@ -101,6 +101,8 @@
                     drop: function(e) {
                         e.preventDefault();
                         fileUploadDiv.removeClass("dragover");
+                        let input = document.querySelector(`#${fileUploadId}`);
+                        input.files = e.originalEvent.dataTransfer.files;
                         handleFiles(e.originalEvent.dataTransfer.files);
                     },
                 });

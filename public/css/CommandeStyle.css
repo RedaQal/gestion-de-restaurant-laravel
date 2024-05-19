@@ -44,17 +44,17 @@ div.containerCo div.header div.search input {
     border: none;
     border-radius: 10px;
     background-color: #ecf4fe;
-    padding: 15px 40px;
+    padding: 15px 20px;
 }
 
 div.containerCo div.header div.search input:focus {
     outline: none;
 }
 
-div.containerCo div.header div.search i {
+div.containerCo div.header div.search button {
     position: absolute;
-    top: 18px;
-    left: 15px;
+    top: 10px;
+    right: 10px;
 }
 
 div.containerCo div.header div.info {
