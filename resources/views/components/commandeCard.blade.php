@@ -12,9 +12,9 @@
                 @endforeach
             </swiper-container>
         @endif
-        <p class="name">{{ $produit->label }}</p>
+        <p class="name">{{ Str::ucfirst($produit->label) }}</p>
         <p class="description">
-            {{ Str::limit($produit->description, 80) }} 
+            {{ Str::limit($produit->description, 61) }}
         </p>
     </div>
     <div class="cardFooter">

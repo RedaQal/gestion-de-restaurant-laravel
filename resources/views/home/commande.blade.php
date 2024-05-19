@@ -63,8 +63,11 @@
                     <h6 class="text-center mt-5 border p-3">Aucun Produit</h6>
                 @else
                     @foreach ($categories_search as $categorie)
-                        <h1 id="{{ $categorie->label }}">{{ Str::ucfirst($categorie->label) }}
-                        </h1>
+                    <div class="d-flex align-items-center">
+                        <h1 id="{{ $categorie->label }}" class="d-inline">{{ Str::ucfirst($categorie->label) }}</h1>
+                        <span class="countCategories"> {{ count($produits->where('id_categorie', $categorie->id)) }}</span>
+                    </div>
+
                         <div class="categoriesFood">
                             @if (!count($produits->where('id_categorie', $categorie->id)))
                                 <p class="aucunProduit"><i class="fa-solid fa-circle-exclamation"></i> Aucun produit

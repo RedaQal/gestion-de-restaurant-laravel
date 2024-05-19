@@ -4,7 +4,6 @@
         <div class="home__data">
             <h1 class="home__title">Nourriture savoureuse</h1>
             <h2 class="home__subtitle">Essayez la meilleure nourriture de<br>la semaine.</h2>
-            <a href="{{ route('commande.index') }}" class="button">Afficher le menu</a>
         </div>
 
         <img src="{{ asset('images/home.png') }}" alt="" class="home__img">

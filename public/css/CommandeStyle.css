@@ -15,6 +15,7 @@ div.containerCo {
     display: flex;
 }
 
+
 div.menuCo {
     width: 100%;
 }
@@ -36,7 +37,7 @@ div.containerCo div.header div.logo img {
 div.containerCo div.header div.search {
     position: relative;
     width: 65%;
-    height: 40px;
+    height: 55px;
 }
 
 div.containerCo div.header div.search input {
@@ -53,7 +54,7 @@ div.containerCo div.header div.search input:focus {
 
 div.containerCo div.header div.search button {
     position: absolute;
-    top: 10px;
+    top: 9px;
     right: 10px;
 }
 
@@ -136,6 +137,15 @@ div.containerCo div.categories {
     align-items: center;
     padding: 10px 0;
     background-color: rgba(250, 235, 215, 0.193);
+}
+
+.countCategories{
+    font-size: 1.2rem;
+    padding: 0 8px;
+    color:white;
+    margin: 0.7rem 0 0 0.5rem; ;
+    border-radius: 50%;
+    background-color: rgb(255, 149, 0);
 }
 
 p.aucunProduit {

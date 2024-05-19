@@ -58,7 +58,7 @@
                                 class="text-danger d-block mb-3 text-center">{{ Session::get('error') }}</small>
                         @endif
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary px-3">Connecter</button>
+                            <button type="submit" class="btn px-3" style="background-color: #0e2238 ;color:white;">Connecter</button>
                         </div>
                     </form>
                 </div>

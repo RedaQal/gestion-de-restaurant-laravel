@@ -70,6 +70,26 @@ class CategorieSeeder extends Seeder
             'categories'
         )->insert(
             [
+                'label' => 'Plats',
+                'img_id' => 8,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        );
+        DB::table(
+            'categories'
+        )->insert(
+            [
+                'label' => 'Sushi',
+                'img_id' => 9,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        );
+        DB::table(
+            'categories'
+        )->insert(
+            [
                 'label' => 'Tacos',
                 'img_id' => 4,
                 'created_at' => now(),

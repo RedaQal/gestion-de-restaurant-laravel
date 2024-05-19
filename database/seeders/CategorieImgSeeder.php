@@ -33,6 +33,12 @@ class CategorieImgSeeder extends Seeder
         ],
         [
             'url' => 'categories/jus.png'
+        ],
+        [
+            'url' => 'categories/plat.png'
+        ],
+        [
+            'url' => 'categories/sushi.png'
         ]
     ]);
     }
